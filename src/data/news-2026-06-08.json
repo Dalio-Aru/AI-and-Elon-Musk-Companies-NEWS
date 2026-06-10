@@ -1,0 +1,149 @@
+{
+  "date": "2026-06-08",
+  "fetchedAt": "2026-06-08T09:12:00+08:00",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "sample-01",
+      "title": "xAI's Grok 3 reportedly closes in on frontier-model benchmarks",
+      "summary": "Early leaks suggest xAI's next model is scoring close to GPT-5 and Claude 4 on reasoning benchmarks, though still behind on long-context and multilingual tasks. Musk teased a late-Q3 release on X.",
+      "url": "https://example.com/xai-grok3-leak",
+      "source": "The Information",
+      "publishedAt": "2026-06-08T06:20:00Z",
+      "imageUrl": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "category": "musk",
+      "company": "xAI",
+      "topic": "LLMs",
+      "topNews": true
+    },
+    {
+      "id": "sample-02",
+      "title": "SpaceX Starship IFT-18 returns booster to launch site after record 14th flight",
+      "summary": "The booster landed on the floating platform in the Gulf of Mexico on its 14th flight, bringing total Starship flights to 18. Orbital refueling demo is targeted for IFT-19.",
+      "url": "https://example.com/spacex-ift18",
+      "source": "SpaceX Newsroom",
+      "publishedAt": "2026-06-08T03:10:00Z",
+      "imageUrl": "https://images.pexels.com/photos/23764/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1200",
+      "category": "musk",
+      "company": "SpaceX",
+      "topic": "Product Launch",
+      "topNews": true
+    },
+    {
+      "id": "sample-03",
+      "title": "Tesla FSD v13.5 rolls out to wider fleet, urban left-turn score hits 99.2%",
+      "summary": "A larger North American cohort is receiving v13.5 over-the-air. Internal data shows significant improvement in unprotected left turns and pedestrian-aware yielding.",
+      "url": "https://example.com/tesla-fsd-v13-5",
+      "source": "Electrek",
+      "publishedAt": "2026-06-07T22:40:00Z",
+      "imageUrl": "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "category": "musk",
+      "company": "Tesla",
+      "topic": "Autonomous",
+      "topNews": true
+    },
+    {
+      "id": "sample-04",
+      "title": "Major agent frameworks converge on MCP — Anthropic, OpenAI commit to common protocol",
+      "summary": "A shared Model Context Protocol draft is published with reference implementations; agents from Claude, GPT, and open-source models can now share tools across runtimes.",
+      "url": "https://example.com/mcp-agents",
+      "source": "TechCrunch",
+      "publishedAt": "2026-06-08T05:00:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "topic": "Agents"
+    },
+    {
+      "id": "sample-05",
+      "title": "Nvidia Blackwell Ultra sampling starts in July; inference clusters getting double bandwidth",
+      "summary": "Nvidia has begun seeding Blackwell Ultra GPUs to cloud partners. H200 successor promises up to 1.8x inference throughput per watt on 400B+ parameter models.",
+      "url": "https://example.com/nvidia-blackwell-ultra",
+      "source": "SemiAnalysis",
+      "publishedAt": "2026-06-08T01:30:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "topic": "Chips"
+    },
+    {
+      "id": "sample-06",
+      "title": "Neuralink patient #5 demonstrates wireless EEG readout at live demo",
+      "summary": "The fifth human trial subject used a next-gen thinner electrode array to type at 92 wpm. A consumer-grade version is hinted for 2027 pending FDA clearance.",
+      "url": "https://example.com/neuralink-patient-5",
+      "source": "Bloomberg",
+      "publishedAt": "2026-06-07T19:00:00Z",
+      "imageUrl": null,
+      "category": "musk",
+      "company": "Neuralink",
+      "topic": "Product Launch"
+    },
+    {
+      "id": "sample-07",
+      "title": "EU AI Act enforcement starts — general-purpose models must publish training compute",
+      "summary": "The final enforcement timeline begins September 2026. Large-model providers will have to disclose training compute, datasets, and safety evaluations publicly.",
+      "url": "https://example.com/eu-ai-act",
+      "source": "Politico",
+      "publishedAt": "2026-06-07T10:00:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "topic": "Policy"
+    },
+    {
+      "id": "sample-08",
+      "title": "The Boring Company opens first downtown Las Vegas Loop extension",
+      "summary": "The tunnel system now connects the Strip to downtown, cutting the 4-mile surface commute to under 6 minutes. More city contracts are in negotiation.",
+      "url": "https://example.com/boring-co-downtown",
+      "source": "Las Vegas Review-Journal",
+      "publishedAt": "2026-06-07T16:00:00Z",
+      "imageUrl": null,
+      "category": "musk",
+      "company": "The Boring Company",
+      "topic": "Product Launch"
+    },
+    {
+      "id": "sample-09",
+      "title": "X rolling out community-owned recommendation algorithms in beta",
+      "summary": "Creators can publish open-source ranking scripts for their followers. Early testers report 2x engagement for niche topics compared to default timeline.",
+      "url": "https://example.com/x-open-ranking",
+      "source": "X Blog",
+      "publishedAt": "2026-06-08T07:45:00Z",
+      "imageUrl": null,
+      "category": "musk",
+      "company": "X",
+      "topic": "Product Launch"
+    },
+    {
+      "id": "sample-10",
+      "title": "Google DeepMind's Gemini Multimodal v2 publishes MMMLU leaderboard sweep",
+      "summary": "Gemini v2 overtakes competitors on 12 of 17 multimodal benchmarks. Internal paper highlights a distilled 8B variant running on consumer GPUs.",
+      "url": "https://example.com/gemini-v2",
+      "source": "arXiv",
+      "publishedAt": "2026-06-07T12:00:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "topic": "Multimodal"
+    },
+    {
+      "id": "sample-11",
+      "title": "Starlink reaches 8 million active terminals, commercial aviation deal with Emirates",
+      "summary": "Emirates will roll out Starlink in-flight internet across 260 widebodies by year-end. SpaceX reports a $4B annualized revenue run-rate for the division.",
+      "url": "https://example.com/starlink-8m",
+      "source": "Wall Street Journal",
+      "publishedAt": "2026-06-07T08:30:00Z",
+      "imageUrl": null,
+      "category": "musk",
+      "company": "Starlink",
+      "topic": "Funding / M&A"
+    },
+    {
+      "id": "sample-12",
+      "title": "Anthropic publishes long-context evaluation suite — 2M tokens, <3% needle-in-haystack drift",
+      "summary": "The public benchmark now includes 16 languages and 4 coding frameworks. Competitors will have to open their test harnesses to be included in the next refresh.",
+      "url": "https://example.com/anthropic-long-context",
+      "source": "Anthropic Research",
+      "publishedAt": "2026-06-06T23:00:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "topic": "LLMs"
+    }
+  ]
+}

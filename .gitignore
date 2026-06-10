@@ -1,0 +1,21 @@
+node_modules
+dist
+.env
+.env.local
+.DS_Store
+*.log
+
+# Trae IDE
+.trae/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Vite / build cache
+.vite/
+.cache/
+
+# OS
+Thumbs.db
