@@ -82,11 +82,15 @@ function CategoryPill({ item }) {
   );
 }
 
-function BigCard({ item, onOpen }) {
+function handleOpen(item) {
+  if (item?.url) window.open(item.url, '_blank', 'noopener,noreferrer');
+}
+
+function BigCard({ item }) {
   if (!item) return null;
   return (
     <article
-      onClick={() => onOpen && onOpen(item)}
+      onClick={() => handleOpen(item)}
       className="group relative flex min-h-[360px] cursor-pointer flex-col overflow-hidden border border-white/10 bg-bg-card/80 backdrop-blur transition-all duration-300 hover:-translate-y-[2px] hover:shadow-glow sm:rounded-2xl md:flex-row md:min-h-[420px]"
     >
       <div className="relative w-full overflow-hidden sm:h-56 md:w-1/2 md:h-auto">
@@ -118,7 +122,7 @@ function BigCard({ item, onOpen }) {
     </article>
   );
 }
-function SmallCard({ item, onOpen }) {
+function SmallCard({ item }) {
   if (!item) return null;
   const tone = PillTone(item);
   const isAccent = tone === 'accent';
@@ -128,7 +132,7 @@ function SmallCard({ item, onOpen }) {
 
   return (
     <article
-      onClick={() => onOpen && onOpen(item)}
+      onClick={() => handleOpen(item)}
       className="group relative min-h-[200px] w-full flex-1 cursor-pointer overflow-hidden border border-white/10 sm:rounded-2xl transition-all duration-300 ease-out hover:-translate-y-[2px] hover:shadow-glow"
     >
       <div className="absolute inset-0 transition-transform duration-300 ease-out group-hover:scale-105 origin-center">
@@ -179,7 +183,7 @@ function SmallCard({ item, onOpen }) {
   );
 }
 
-export default function Hero({ today, fetchedAt, topItems, onOpen }) {
+export default function Hero({ today, fetchedAt, topItems }) {
   const headline = topItems && topItems.length ? topItems[0] : null;
   const sub = topItems && topItems.length > 1 ? topItems.slice(1, 3) : [];
 
@@ -206,9 +210,9 @@ export default function Hero({ today, fetchedAt, topItems, onOpen }) {
       </div>
 
       <div className="mt-8 grid gap-3 md:grid-cols-3 md:gap-4">
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 animate-slide-in-left">
           {headline ? (
-            <BigCard item={headline} onOpen={onOpen} />
+            <BigCard item={headline} />
           ) : (
             <div className="flex min-h-[360px] items-center justify-center border border-white/10 bg-bg-card/80 p-6 text-sm text-ink-secondary sm:rounded-2xl md:min-h-[420px]">
               No top stories yet. Run <code className="pill mx-2">npm run fetch-news</code> to pull today's news.
@@ -216,9 +220,9 @@ export default function Hero({ today, fetchedAt, topItems, onOpen }) {
           )}
         </div>
 
-        <div className="flex flex-col gap-3 md:gap-3">
+        <div className="flex flex-col gap-3 md:gap-3 animate-slide-in-right">
           {sub.map((it) => (
-            <SmallCard key={it.id} item={it} onOpen={onOpen} />
+            <SmallCard key={it.id} item={it} />
           ))}
           {sub.length === 0 && headline && (
             <div className="flex items-center justify-center border border-white/10 bg-bg-card/80 p-6 text-sm text-ink-secondary sm:rounded-2xl">

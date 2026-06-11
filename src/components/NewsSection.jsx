@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsCard from './NewsCard.jsx';
 
-export default function NewsSection({ title, hint, items, onOpen, tone }) {
+export default function NewsSection({ title, hint, items, tone }) {
   const color = tone === 'musk' ? 'border-musk/30 text-musk' : 'border-accent/30 text-accent';
 
   return (
@@ -22,8 +22,14 @@ export default function NewsSection({ title, hint, items, onOpen, tone }) {
         </div>
       ) : (
         <div className="flex flex-col gap-3">
-          {items.map((it) => (
-            <NewsCard key={it.id} item={it} onOpen={onOpen} />
+          {items.map((it, idx) => (
+            <NewsCard
+              key={it.id}
+              item={it}
+              index={idx}
+              style={{ animationDelay: `${idx * 0.08}s` }}
+              className="animate-fade-in-up"
+            />
           ))}
         </div>
       )}

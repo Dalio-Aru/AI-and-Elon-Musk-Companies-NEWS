@@ -3,19 +3,17 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import TabFilter from './components/TabFilter.jsx';
 import NewsSection from './components/NewsSection.jsx';
-import Drawer from './components/Drawer.jsx';
 import { loadAllNews, filterItems, getTodayYmd } from './utils/loadNews.js';
 
 export default function App() {
   const bundle = useMemo(() => loadAllNews(), []);
-  const todayYmd = bundle.today;  // use the "display" date from loadAllNews so filters match the latest available bundle
+  const todayYmd = bundle.today;
 
   const [query, setQuery] = useState('');
   const [range, setRange] = useState('today');
   const [category, setCategory] = useState('all');
   const [company, setCompany] = useState('all');
   const [topic, setTopic] = useState('all');
-  const [active, setActive] = useState(null);
 
   // Reset company when switching to AI only
   useEffect(() => {
@@ -72,7 +70,6 @@ export default function App() {
           today={bundle.today}
           fetchedAt={bundle.fetchedAt}
           topItems={topHeadlines}
-          onOpen={setActive}
         />
 
         <TabFilter
@@ -92,7 +89,6 @@ export default function App() {
           hint="Models, agents, chips, policy, research."
           tone="accent"
           items={aiItems}
-          onOpen={setActive}
         />
 
         <NewsSection
@@ -100,7 +96,6 @@ export default function App() {
           hint="Tesla, SpaceX, X, Neuralink, The Boring Company, xAI, Starlink."
           tone="musk"
           items={muskItems}
-          onOpen={setActive}
         />
 
         {rangeFiltered.length === 0 && (
@@ -117,8 +112,6 @@ export default function App() {
       <footer className="border-t border-white/5 py-8 text-center text-xs text-ink-muted">
         Built with React + Vite + Tailwind · Data from NewsAPI.org · &copy; {new Date().getFullYear()}
       </footer>
-
-      <Drawer item={active} onClose={() => setActive(null)} />
     </div>
   );
 }
