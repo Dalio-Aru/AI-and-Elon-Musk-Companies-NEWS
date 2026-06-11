@@ -3,6 +3,18 @@ import { Clock, ArrowUpRight, Cpu, Rocket } from 'lucide-react';
 import TagPill from './TagPill.jsx';
 import { formatRelative } from '../utils/loadNews.js';
 
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const m = months[d.getMonth()];
+  const day = d.getDate();
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  return `${m} ${day}, ${hh}:${mm}`;
+}
+
 function Thumbnail({ item }) {
   const isAccent = item.category === 'ai';
   const Icon = isAccent ? Cpu : Rocket;
@@ -87,10 +99,13 @@ export default function NewsCard({ item, index, className, style }) {
             </p>
           )}
 
-          {/* Bottom: source */}
-          <div className="flex items-center gap-1.5 text-[11px] text-ink-muted/70">
-            <ArrowUpRight className="h-3 w-3" />
-            <span>{item.source || 'Unknown source'}</span>
+          {/* Bottom: source + date */}
+          <div className="flex items-center justify-between text-[11px] text-ink-muted/70">
+            <span className="inline-flex items-center gap-1.5">
+              <ArrowUpRight className="h-3 w-3" />
+              {item.source || 'Unknown source'}
+            </span>
+            <span className="font-mono">{formatDate(item.publishedAt)}</span>
           </div>
         </div>
       </div>

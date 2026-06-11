@@ -58,11 +58,30 @@ const QUERIES = [
   { q: 'tesla OR "elon musk" OR spacex OR neuralink OR xai OR "boring company" OR starlink', category: 'musk' },
 ];
 
-const PUBLISHERS = new Set([
-  'techcrunch', 'the verge', 'engadget', 'wired', 'ars technica',
-  'reuters', 'bloomberg', 'the information', 'financial times',
-  'bbc news', 'cnn', 'the new york times', 'the guardian',
-  'electrek', 'teslarati', 'spacex', 'x blog', 'arstechnica',
+// --- Layer 1: Source whitelist ---
+// Only keep articles from trusted publishers.
+const SOURCE_WHITELIST = new Set([
+  // Tier 1 — premium outlets
+  'reuters', 'bloomberg', 'the information', 'financial times', 'wall street journal',
+  'the new york times', 'the guardian', 'bbc news', 'cnn', 'washington post',
+  // Tier 2 — tech-focused
+  'techcrunch', 'the verge', 'wired', 'ars technica', 'engadget', 'venturebeat',
+  'axios', 'mit technology review', 'the register', 'zdnet', 'cnbc',
+  'fortune', 'business insider', 'marketwatch', 'yahoo finance', 'seeking alpha',
+  // Tier 3 — Musk / EV / space focused
+  'electrek', 'teslarati', 'tesmanian', 'spacex newsroom', 'x blog',
+  'space news', 'aviation week',
+  // Tier 4 — policy & general interest
+  'politico', 'the hill', 'associated press', 'npr', 'the atlantic',
+  'arstechnica', 'gizmodo', 'mashable', 'the next web', 'decrypt',
+  'coindesk', 'the block', 'techspot', 'pcmag', 'tom\'s hardware',
+]);
+
+// Known junk / non-news domains to always exclude
+const JUNK_DOMAINS = new Set([
+  'pypi.org', 'npmjs.com', 'github.com', 'youtube.com', 'reddit.com',
+  'medium.com', 'substack.com', 'linkedin.com', 't.me', 'discord.com',
+  'patreon.com', 'buy me a coffee', 'buymeacoffee.com', 'itch.io',
 ]);
 
 const TOPIC_RULES = [
@@ -92,6 +111,59 @@ function pickCompany(title) {
 function pickTopic(title) {
   for (const r of TOPIC_RULES) if (r.test(title)) return r.topic;
   return 'Other';
+}
+
+// --- Layer 2: Title blacklist ---
+// Returns true if the title looks like junk / non-news content.
+function isJunkTitle(title, url, source) {
+  const t = (title || '').trim();
+  const lower = t.toLowerCase();
+
+  // Too short to be meaningful
+  if (t.length < 25) return true;
+
+  // Version / release number pattern (e.g. "exfer-mcp 0.3.3", "react 19.1.0")
+  if (/^\S+[\s-]?\d+\.\d+/.test(t) && !/\b(break|launch|release|update|announce|new)\b/i.test(t)) return true;
+
+  // Pure stock ticker / price analysis
+  if (/^(is|are|why|what|how)\s+(.+)?\s+(a\s+)?(good|bad|strong|weak|buy|sell|hold)/i.test(t)) {
+    const src = (source || '').toLowerCase();
+    if (!SOURCE_WHITELIST.has(src)) return true;
+  }
+
+  // Junk domain check from URL
+  try {
+    const hostname = new URL(url || '').hostname.toLowerCase();
+    for (const junk of JUNK_DOMAINS) {
+      if (hostname.includes(junk)) return true;
+    }
+  } catch { /* ignore invalid URLs */ }
+
+  return false;
+}
+
+// --- Layer 4: Title similarity dedup ---
+// Remove articles whose titles are very similar (same story from multiple outlets).
+function dedupeByTitle(items) {
+  const out = [];
+  const seen = new Set();
+
+  for (const item of items) {
+    // Normalize title: lowercase, remove non-alphanumerics, collapse spaces
+    const normalized = (item.title || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim()
+      .split(/\s+/)
+      .slice(0, 6) // compare first 6 words
+      .join(' ');
+
+    if (!normalized || seen.has(normalized)) continue;
+    seen.add(normalized);
+    out.push(item);
+  }
+
+  return out;
 }
 
 function isoDateDaysAgo(n) {
@@ -192,13 +264,30 @@ function buildItem(a, idx) {
   const title = (a.raw.title || '').replace(/\s+[-–|].{0,40}$/, '').trim();
   if (!title || title.toLowerCase() === '[removed]') return null;
 
+  // Layer 2: title blacklist check
+  if (isJunkTitle(title, a.raw.url, a.raw.source?.name)) return null;
+
+  // Layer 1: source whitelist check
+  const source = a.raw.source && typeof a.raw.source === 'object' ? a.raw.source.name || null : a.raw.source;
+  const sourceLower = (source || '').toLowerCase();
+  if (!SOURCE_WHITELIST.has(sourceLower)) return null;
+
   const category = a.category;
   const company = category === 'musk' ? pickCompany(title) : null;
   const topic = pickTopic(title);
 
-  const source = a.raw.source && typeof a.raw.source === 'object' ? a.raw.source.name || null : a.raw.source;
-  const topNews = /break(ing)?|announce|unveil|launch|major|landmark|milestone/.test(title.toLowerCase())
-    && PUBLISHERS.has((source || '').toLowerCase());
+  // Layer 3: Relaxed TopNews rules
+  // Tier-A sources + any Musk company or AI topic keyword → topNews
+  const TIER_A_SOURCES = new Set([
+    'reuters', 'bloomberg', 'the information', 'financial times',
+    'techcrunch', 'the verge', 'wired', 'ars technica', 'bbc news',
+    'cnbc', 'the new york times', 'the guardian', 'washington post',
+    'axios', 'politico', 'associated press', 'mit technology review',
+    'venturebeat', 'electrek', 'teslarati',
+  ]);
+  const isTierA = TIER_A_SOURCES.has(sourceLower);
+  const hasStrongKeyword = /break(ing)?|announce|unveil|launch|major|landmark|milestone|record|first|deal|acquir|billion|ipo|funding/.test(title.toLowerCase());
+  const topNews = isTierA && (hasStrongKeyword || company || category === 'ai');
 
   return {
     id: `newsapi-${Date.now()}-${idx}`,
@@ -231,15 +320,30 @@ async function main() {
     }
   }
 
+  // URL dedup
   const unique = dedupe(allRaw);
-  const items = unique
+  console.log(`\n[filter] After URL dedup: ${unique.length} articles`);
+
+  // Build items (Layers 1-3 applied inside buildItem)
+  const built = unique
     .map((a, i) => buildItem(a, i))
     .filter(Boolean)
     .sort((x, y) => (x.publishedAt < y.publishedAt ? 1 : -1));
+  console.log(`[filter] After source whitelist + title blacklist: ${built.length} articles`);
 
-  // Pick top news: prefer items with topNews flag first, otherwise keep latest
-  const top = items.filter((it) => it.topNews).slice(0, 3);
+  // Layer 4: Title similarity dedup
+  const items = dedupeByTitle(built);
+  console.log(`[filter] After title dedup: ${items.length} articles`);
+
+  // Pick top news
+  const top = items.filter((it) => it.topNews).slice(0, 5);
   for (const it of top) it.topNews = true;
+  // Fallback: if fewer than 3 topNews, promote latest items
+  if (top.length < 3) {
+    const needed = 3 - top.length;
+    const candidates = items.filter((it) => !it.topNews).slice(0, needed);
+    for (const it of candidates) it.topNews = true;
+  }
 
   const payload = {
     date: todayISO(),
@@ -253,7 +357,8 @@ async function main() {
   console.log(`\n[fetch-news] ✅ Wrote ${items.length} articles to ${path.relative(projectRoot, outPath)}`);
   console.log(`  · AI items:       ${items.filter((i) => i.category === 'ai').length}`);
   console.log(`  · Musk items:     ${items.filter((i) => i.category === 'musk').length}`);
-  console.log(`  · Top headlines:  ${top.length}`);
+  console.log(`  · Top headlines:  ${items.filter((i) => i.topNews).length}`);
+  console.log(`  · With images:   ${items.filter((i) => i.imageUrl).length}`);
 }
 
 main().catch((err) => {
