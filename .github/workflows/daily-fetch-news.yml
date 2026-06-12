@@ -1,0 +1,57 @@
+name: Daily Fetch News - 14:00 UTC
+
+on:
+  # 每天 UTC 14:00 运行
+  schedule:
+    - cron: '0 14 * * *'
+
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 设置 Node.js 18
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 运行爬虫脚本（使用环境变量）
+      - name: Fetch news from NewsAPI and Baidu Translate
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          BAIDU_APP_ID: ${{ secrets.BAIDU_APP_ID }}
+          BAIDU_SECRET_KEY: ${{ secrets.BAIDU_SECRET_KEY }}
+        run: npm run fetch-news
+
+      # 提交和推送变更
+      - name: Commit and push if news changed
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions Bot"
+
+          # 检查是否有变化
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add src/data/news-*.json
+            git commit -m "🤖 Automated: Fetch and translate news - $(date '+%Y-%m-%d %H:%M:%S UTC')"
+            git push
+          fi
+
+      # 失败时发送通知（可选）
+      - name: Notify on failure
+        if: failure()
+        run: echo "❌ News fetch failed! Check logs for details."
