@@ -2,6 +2,8 @@ import React from 'react';
 import { Clock, ArrowUpRight, Cpu, Rocket } from 'lucide-react';
 import TagPill from './TagPill.jsx';
 import { formatRelative } from '../utils/loadNews.js';
+import { useLang } from '../context/LangContext.jsx';
+import { t } from '../i18n.js';
 
 function formatDate(iso) {
   if (!iso) return '';
@@ -46,9 +48,14 @@ function handleOpen(item) {
 
 export default function NewsCard({ item, index, className, style }) {
   if (!item) return null;
+  const { lang } = useLang();
   const isAccent = item.category === 'ai';
   const borderTone = isAccent ? 'border-l-accent' : 'border-l-musk';
   const isFirst = index === 0;
+
+  // Use translated text when in CN mode, fall back to English
+  const displayTitle = lang === 'zh' && item.titleZh ? item.titleZh : item.title;
+  const displaySummary = lang === 'zh' && item.summaryZh ? item.summaryZh : item.summary;
 
   return (
     <article
@@ -89,13 +96,13 @@ export default function NewsCard({ item, index, className, style }) {
               isFirst ? 'text-lg sm:text-xl' : 'text-base'
             }`}
           >
-            {item.title}
+            {displayTitle}
           </h3>
 
           {/* Summary - truncated */}
-          {item.summary && (
+          {displaySummary && (
             <p className="line-clamp-2 text-sm leading-relaxed text-ink-secondary">
-              {item.summary}
+              {displaySummary}
             </p>
           )}
 
@@ -103,7 +110,7 @@ export default function NewsCard({ item, index, className, style }) {
           <div className="flex items-center justify-between text-[11px] text-ink-muted/70">
             <span className="inline-flex items-center gap-1.5">
               <ArrowUpRight className="h-3 w-3" />
-              {item.source || 'Unknown source'}
+              {item.source || t('unknownSource', {}, lang)}
             </span>
             <span className="font-mono">{formatDate(item.publishedAt)}</span>
           </div>

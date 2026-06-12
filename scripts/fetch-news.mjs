@@ -12,10 +12,13 @@
 //   NEWS_API_KEY          required
 //   HTTPS_PROXY           optional, e.g. http://127.0.0.1:7890
 //   NEWS_FETCH_DAYS       integer, default 1
+//   BAIDU_APP_ID          optional, for auto-translation (Baidu Translate)
+//   BAIDU_SECRET_KEY      optional, for auto-translation (Baidu Translate)
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
@@ -304,6 +307,113 @@ function buildItem(a, idx) {
   };
 }
 
+// --- Baidu Translation (optional) ---
+// Translates text from English to Chinese using Baidu Translate API.
+// Requires BAIDU_APP_ID and BAIDU_SECRET_KEY in .env.local.
+
+function md5(str) {
+  return createHash('md5').update(str).digest('hex');
+}
+
+const BAIDU_APP_ID = env.BAIDU_APP_ID || '';
+const BAIDU_SECRET_KEY = env.BAIDU_SECRET_KEY || '';
+const HAS_BAIDU = Boolean(BAIDU_APP_ID && BAIDU_SECRET_KEY);
+
+async function baiduTranslate(text) {
+  if (!text || !HAS_BAIDU) return null;
+  const salt = Date.now().toString();
+  const signStr = BAIDU_APP_ID + text + salt + BAIDU_SECRET_KEY;
+  const sign = md5(signStr);
+
+  const params = new URLSearchParams({
+    q: text,
+    from: 'en',
+    to: 'zh',
+    appid: BAIDU_APP_ID,
+    salt,
+    sign,
+  });
+
+  const url = `https://fanyi-api.baidu.com/api/trans/vip/translate?${params.toString()}`;
+
+  try {
+    const json = await fetchJson(url, {});
+    if (json.error_code) {
+      console.warn(`[translate] ⚠ Baidu error ${json.error_code}: ${json.error_msg || ''}`);
+      return null;
+    }
+    if (json.trans_result && json.trans_result.length > 0) {
+      return json.trans_result.map((r) => r.dst).join('\n');
+    }
+    return null;
+  } catch (err) {
+    console.warn(`[translate] ⚠ Failed: ${err.message}`);
+    return null;
+  }
+}
+
+async function translateItems(items) {
+  if (!HAS_BAIDU || items.length === 0) return items;
+
+  console.log(`\n[translate] Translating ${items.length} articles via Baidu…`);
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+
+    // Strategy: batch title + summary into ONE API call using \n separator
+    // This cuts requests in half (from ~30 → ~15), avoiding QPS limits
+    const parts = [];
+    if (item.title) parts.push(item.title);
+    if (item.summary) parts.push(item.summary);
+
+    if (parts.length === 0) continue;
+
+    const combinedText = parts.join('\n');
+
+    // Retry up to 3 times with exponential backoff on rate-limit errors
+    let result = null;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      result = await baiduTranslate(combinedText);
+      if (result) break; // success
+
+      // Retry only on rate-limit errors (54003)
+      if (attempt < 2) {
+        const waitMs = 2000 * (attempt + 1); // 2s, 4s
+        console.log(`  ⏳ [${i + 1}/${items.length}] Rate limited, retrying in ${waitMs}ms… (attempt ${attempt + 1}/3)`);
+        await new Promise((r) => setTimeout(r, waitMs));
+      }
+    }
+
+    if (result && parts.length >= 1) {
+      // Baidu returns translated segments separated by \n
+      const translatedParts = result.split('\n');
+      if (item.title && translatedParts[0]) {
+        item.titleZh = translatedParts[0].trim();
+        console.log(`  ✓ [${i + 1}/${items.length}] titleZh translated`);
+      }
+      if (item.summary && translatedParts.length > 1 && translatedParts[1]) {
+        item.summaryZh = translatedParts[1].trim();
+        console.log(`  ✓ [${i + 1}/${items.length}] summaryZh translated`);
+      } else if (item.summary) {
+        console.log(`  ⊘ [${i + 1}/${items.length}] summaryZh — kept original`);
+      }
+    } else {
+      console.log(`  ✗ [${i + 1}/${items.length}] all fields — kept original`);
+    }
+
+    // Wait between articles (1.5s — conservative for Baidu free tier)
+    if (i < items.length - 1) {
+      await new Promise((r) => setTimeout(r, 1500));
+    }
+  }
+
+  const zhTitles = items.filter((it) => it.titleZh).length;
+  const zhSummaries = items.filter((it) => it.summaryZh).length;
+  console.log(`[translate] ✅ Done: ${zhTitles} titles + ${zhSummaries} summaries translated`);
+
+  return items;
+}
+
 async function main() {
   fs.mkdirSync(dataDir, { recursive: true });
 
@@ -332,7 +442,7 @@ async function main() {
   console.log(`[filter] After source whitelist + title blacklist: ${built.length} articles`);
 
   // Layer 4: Title similarity dedup
-  const items = dedupeByTitle(built);
+  let items = dedupeByTitle(built);
   console.log(`[filter] After title dedup: ${items.length} articles`);
 
   // Pick top news
@@ -343,6 +453,13 @@ async function main() {
     const needed = 3 - top.length;
     const candidates = items.filter((it) => !it.topNews).slice(0, needed);
     for (const it of candidates) it.topNews = true;
+  }
+
+  // Translate all items to Chinese via Baidu API
+  if (HAS_BAIDU) {
+    items = await translateItems(items);
+  } else {
+    console.log('\n[translate] ⏭ Skipped — BAIDU_APP_ID / BAIDU_SECRET_KEY not set in .env.local');
   }
 
   const payload = {
@@ -359,6 +476,11 @@ async function main() {
   console.log(`  · Musk items:     ${items.filter((i) => i.category === 'musk').length}`);
   console.log(`  · Top headlines:  ${items.filter((i) => i.topNews).length}`);
   console.log(`  · With images:   ${items.filter((i) => i.imageUrl).length}`);
+  if (HAS_BAIDU) {
+    const zhTitles = items.filter((i) => i.titleZh).length;
+    const zhSummaries = items.filter((i) => i.summaryZh).length;
+    console.log(`  · Translated (zh): ${zhTitles} titles + ${zhSummaries} summaries`);
+  }
 }
 
 main().catch((err) => {

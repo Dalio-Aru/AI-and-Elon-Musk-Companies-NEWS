@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { COMPANIES, TOPICS } from '../utils/constants.js';
-
-const TABS = [
-  { key: 'today', label: 'Today' },
-  { key: 'week', label: 'This Week' },
-];
+import { useLang } from '../context/LangContext.jsx';
+import { t, tCompany, tTopic } from '../i18n.js';
 
 export default function TabFilter({
   range,
@@ -18,38 +15,45 @@ export default function TabFilter({
   onTopicChange,
   counts,
 }) {
+  const { lang } = useLang();
+
+  const TABS = [
+    { key: 'today', label: t('tabToday', {}, lang) },
+    { key: 'week', label: t('tabWeek', {}, lang) },
+  ];
+
   const categoryOptions = [
-    { value: 'all', label: 'All' },
-    { value: 'ai', label: 'AI' },
-    { value: 'musk', label: 'Musk companies' },
+    { value: 'all', label: t('filterAll', {}, lang) },
+    { value: 'ai', label: t('filterAI', {}, lang) },
+    { value: 'musk', label: t('filterMusk', {}, lang) },
   ];
   const companyOptions = [
-    { value: 'all', label: 'All companies' },
-    ...COMPANIES.map((c) => ({ value: c, label: c })),
+    { value: 'all', label: t('filterAllCompanies', {}, lang) },
+    ...COMPANIES.map((c) => ({ value: c, label: tCompany(c, lang) })),
   ];
   const topicOptions = [
-    { value: 'all', label: 'All topics' },
-    ...TOPICS.map((t) => ({ value: t, label: t })),
+    { value: 'all', label: t('filterAllTopics', {}, lang) },
+    ...TOPICS.map((t) => ({ value: t, label: tTopic(t, lang) })),
   ];
 
   return (
     <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div className="flex gap-1 rounded-xl border border-white/10 bg-bg-soft/60 p-1">
-        {TABS.map((t) => (
+        {TABS.map((tab) => (
           <button
-            key={t.key}
+            key={tab.key}
             type="button"
-            onClick={() => onRangeChange(t.key)}
+            onClick={() => onRangeChange(tab.key)}
             className={
               'rounded-lg px-3 py-1.5 text-sm font-medium transition ' +
-              (range === t.key
+              (range === tab.key
                 ? 'bg-accent/15 text-accent shadow-glow-soft'
                 : 'text-ink-secondary hover:text-ink-primary')
             }
           >
-            {t.label}
+            {tab.label}
             <span className="ml-2 font-mono text-[10px] text-ink-muted">
-              {counts[t.key] ?? 0}
+              {counts[tab.key] ?? 0}
             </span>
           </button>
         ))}
@@ -57,20 +61,20 @@ export default function TabFilter({
 
       <div className="flex flex-wrap items-center gap-2">
         <CustomSelect
-          label="Category"
+          label={t('filterCategory', {}, lang)}
           value={category}
           onChange={onCategoryChange}
           options={categoryOptions}
         />
         <CustomSelect
-          label="Company"
+          label={t('filterCompany', {}, lang)}
           value={company}
           onChange={onCompanyChange}
           options={companyOptions}
           disabled={category === 'ai'}
         />
         <CustomSelect
-          label="Topic"
+          label={t('filterTopic', {}, lang)}
           value={topic}
           onChange={onTopicChange}
           options={topicOptions}

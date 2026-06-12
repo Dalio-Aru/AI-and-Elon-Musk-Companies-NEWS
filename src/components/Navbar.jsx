@@ -1,7 +1,12 @@
 import React from 'react';
 import { Search, X } from 'lucide-react';
+import { useLang } from '../context/LangContext.jsx';
+import { t } from '../i18n.js';
+import LangToggle from './LangToggle.jsx';
 
 export default function Navbar({ query, onQueryChange }) {
+  const { lang } = useLang();
+
   return (
     <header className="sticky top-0 z-20 border-b border-white/5 bg-bg/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 md:px-6">
@@ -11,12 +16,15 @@ export default function Navbar({ query, onQueryChange }) {
             <span className="font-mono text-sm font-bold">N</span>
           </div>
           <div className="leading-tight hidden sm:block">
-            <div className="text-sm font-semibold">AI &amp; Musk News</div>
+            <div className="text-sm font-semibold">{t('navTitle', {}, lang)}</div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-ink-muted">
-              daily brief
+              {t('navSubtitle', {}, lang)}
             </div>
           </div>
         </div>
+
+        {/* Language Toggle — left of search */}
+        <LangToggle />
 
         {/* Search */}
         <div className="relative ml-auto flex-1 max-w-md">
@@ -25,7 +33,7 @@ export default function Navbar({ query, onQueryChange }) {
             type="search"
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
-            placeholder={query ? '' : 'Search news by title, source…'}
+            placeholder={query ? '' : t('navSearch', {}, lang)}
             className="w-full rounded-lg border border-white/10 bg-bg-soft/70 py-2 pl-9 pr-9 text-sm text-ink-primary placeholder:text-ink-muted focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 transition-colors"
           />
           {query && (

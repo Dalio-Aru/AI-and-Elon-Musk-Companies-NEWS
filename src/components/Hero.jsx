@@ -1,5 +1,7 @@
 import React from 'react';
 import { Sparkles, Rocket, Cpu, Clock, ExternalLink, Calendar, ArrowUpRight } from 'lucide-react';
+import { useLang } from '../context/LangContext.jsx';
+import { t } from '../i18n.js';
 
 function formatDate(iso) {
   if (!iso) return '';
@@ -16,10 +18,10 @@ function formatDate(iso) {
   return `${m} ${day}, ${hh}:${mm}`;
 }
 
-function TopStoryLabel(item) {
-  if (item.category === 'ai') return 'AI TOP STORY';
-  if (item.company) return `${item.company.toUpperCase()} TOP STORY`;
-  return 'MUSK TOP STORY';
+function TopStoryLabel(item, lang) {
+  if (item.category === 'ai') return t('aiTopStory', {}, lang);
+  if (item.company) return `${item.company.toUpperCase()} ${t('muskTopStoryPrefix', {}, lang)}`;
+  return `MUSK ${t('muskTopStoryPrefix', {}, lang)}`;
 }
 
 function PillTone(item) {
@@ -64,10 +66,10 @@ function CoverImage({ item, className }) {
   );
 }
 
-function CategoryPill({ item }) {
+function CategoryPill({ item, lang }) {
   const tone = PillTone(item);
   const isAccent = tone === 'accent';
-  const label = TopStoryLabel(item);
+  const label = TopStoryLabel(item, lang);
   return (
     <span
       className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${
@@ -86,8 +88,11 @@ function handleOpen(item) {
   if (item?.url) window.open(item.url, '_blank', 'noopener,noreferrer');
 }
 
-function BigCard({ item }) {
+function BigCard({ item, lang }) {
   if (!item) return null;
+  const displayTitle = lang === 'zh' && item.titleZh ? item.titleZh : item.title;
+  const displaySummary = lang === 'zh' && item.summaryZh ? item.summaryZh : item.summary;
+
   return (
     <article
       onClick={() => handleOpen(item)}
@@ -98,13 +103,13 @@ function BigCard({ item }) {
       </div>
       <div className="relative flex flex-1 flex-col justify-between p-6 md:w-1/2 md:p-8">
         <div className="relative">
-          <CategoryPill item={item} />
+          <CategoryPill item={item} lang={lang} />
           <h2 className="mt-4 text-2xl font-bold leading-tight tracking-tight text-ink-primary transition-colors group-hover:text-accent md:text-[28px] md:leading-tight">
-            {item.title}
+            {displayTitle}
           </h2>
-          {item.summary && (
+          {displaySummary && (
             <p className="mt-3 text-sm leading-relaxed text-ink-secondary md:text-[15px]">
-              {item.summary}
+              {displaySummary}
             </p>
           )}
         </div>
@@ -122,13 +127,15 @@ function BigCard({ item }) {
     </article>
   );
 }
-function SmallCard({ item }) {
+
+function SmallCard({ item, lang }) {
   if (!item) return null;
   const tone = PillTone(item);
   const isAccent = tone === 'accent';
   const Icon = isAccent ? Cpu : Rocket;
   const pillLabel = isAccent ? 'AI' : (item.company || 'MUSK').toUpperCase();
   const hasImage = Boolean(item.imageUrl);
+  const displayTitle = lang === 'zh' && item.titleZh ? item.titleZh : item.title;
 
   return (
     <article
@@ -167,7 +174,7 @@ function SmallCard({ item }) {
 
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-2 p-4 sm:p-5">
         <h3 className="text-lg font-bold leading-tight text-white md:text-xl">
-          {item.title}
+          {displayTitle}
         </h3>
         <div className="flex items-center justify-between gap-2 text-xs">
           <span className="inline-flex items-center gap-1 font-medium text-white">
@@ -184,6 +191,7 @@ function SmallCard({ item }) {
 }
 
 export default function Hero({ today, fetchedAt, topItems }) {
+  const { lang } = useLang();
   const headline = topItems && topItems.length ? topItems[0] : null;
   const sub = topItems && topItems.length > 1 ? topItems.slice(1, 3) : [];
 
@@ -193,40 +201,42 @@ export default function Hero({ today, fetchedAt, topItems }) {
         <div>
           <div className="section-title mb-3 flex items-center gap-2 text-ink-secondary">
             <Sparkles className="h-4 w-4 text-accent" />
-            <span>DAILY BRIEF</span>
+            <span>{t('heroLabel', {}, lang)}</span>
             <span className="text-ink-muted">· {today}</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-            AI &amp; Elon Musk — Daily News
+            {t('heroTitle', {}, lang)}
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-ink-secondary">
-            One place for the latest in AI and all of Elon Musk's companies: Tesla, SpaceX, X, Neuralink, The Boring Company, xAI and Starlink.
+            {t('heroDesc', {}, lang)}
           </p>
         </div>
         <div className="flex items-center gap-2 text-sm text-ink-secondary">
           <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-accent shadow-glow" />
-          {fetchedAt ? `Last updated ${fetchedAt}` : 'Loading…'}
+          {fetchedAt ? `${t('heroUpdated', {}, lang)} ${fetchedAt}` : t('heroLoading', {}, lang)}
         </div>
       </div>
 
       <div className="mt-8 grid gap-3 md:grid-cols-3 md:gap-4">
         <div className="md:col-span-2 animate-slide-in-left">
           {headline ? (
-            <BigCard item={headline} />
+            <BigCard item={headline} lang={lang} />
           ) : (
             <div className="flex min-h-[360px] items-center justify-center border border-white/10 bg-bg-card/80 p-6 text-sm text-ink-secondary sm:rounded-2xl md:min-h-[420px]">
-              No top stories yet. Run <code className="pill mx-2">npm run fetch-news</code> to pull today's news.
+              {t('heroNoTopStories', {}, lang)}{' '}
+              <code className="pill mx-2">npm run fetch-news</code>{' '}
+              {t('heroRunFetch', {}, lang)}
             </div>
           )}
         </div>
 
         <div className="flex flex-col gap-3 md:gap-3 animate-slide-in-right">
           {sub.map((it) => (
-            <SmallCard key={it.id} item={it} />
+            <SmallCard key={it.id} item={it} lang={lang} />
           ))}
           {sub.length === 0 && headline && (
             <div className="flex items-center justify-center border border-white/10 bg-bg-card/80 p-6 text-sm text-ink-secondary sm:rounded-2xl">
-              Add more top stories to fill the sidebar.
+              {t('heroFillSidebar', {}, lang)}
             </div>
           )}
         </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 import NewsCard from './NewsCard.jsx';
+import { useLang } from '../context/LangContext.jsx';
+import { t } from '../i18n.js';
 
 export default function NewsSection({ title, hint, items, tone }) {
+  const { lang } = useLang();
   const color = tone === 'musk' ? 'border-musk/30 text-musk' : 'border-accent/30 text-accent';
 
   return (
@@ -13,12 +16,12 @@ export default function NewsSection({ title, hint, items, tone }) {
           </div>
           {hint && <p className="mt-2 text-xs text-ink-muted">{hint}</p>}
         </div>
-        <div className="text-xs text-ink-muted">{items.length} items</div>
+        <div className="text-xs text-ink-muted">{t('itemsCount', { count: items.length }, lang)}</div>
       </div>
 
       {items.length === 0 ? (
         <div className="glass-card p-8 text-center text-sm text-ink-secondary">
-          No items in this section for the selected date range.
+          {t('noItemsInSection', {}, lang)}
         </div>
       ) : (
         <div className="flex flex-col gap-3">

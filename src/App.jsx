@@ -4,9 +4,12 @@ import Hero from './components/Hero.jsx';
 import TabFilter from './components/TabFilter.jsx';
 import NewsSection from './components/NewsSection.jsx';
 import BackToTop from './components/BackToTop.jsx';
-import { loadAllNews, filterItems, getTodayYmd } from './utils/loadNews.js';
+import LangProvider, { useLang } from './context/LangContext.jsx';
+import { loadAllNews, filterItems } from './utils/loadNews.js';
+import { t } from './i18n.js';
 
-export default function App() {
+function AppContent() {
+  const { lang } = useLang();
   const bundle = useMemo(() => loadAllNews(), []);
   const todayYmd = bundle.today;
 
@@ -69,7 +72,7 @@ export default function App() {
       <Navbar query={query} onQueryChange={setQuery} />
 
       <main className="mx-auto max-w-6xl px-4 py-10 md:px-6">
-        {/* Hero: hide when searching to focus on results */}
+        {/* Hero: hide when searching */}
         {!isSearching && (
           <Hero
             today={bundle.today}
@@ -93,33 +96,30 @@ export default function App() {
         )}
 
         {isSearching ? (
-          /* Search mode: unified results */
+          /* Search mode */
           <>
             <div className="mb-4 flex items-center justify-between">
               <p className="text-sm text-ink-secondary">
-                Searching for{' '}
-                <span className="font-semibold text-accent">&ldquo;{query.trim()}&rdquo;</span>
-                {' \u2014 '}
-                <span className="font-mono">{rangeFiltered.length}</span> result{rangeFiltered.length !== 1 ? 's' : ''}
+                {t('searchingFor', { q: query.trim(), count: rangeFiltered.length, plural: rangeFiltered.length !== 1 ? 's' : '' }, lang)}
               </p>
               <button
                 onClick={() => setQuery('')}
                 className="text-xs font-medium text-accent hover:underline"
               >
-                Clear
+                {t('clearSearch', {}, lang)}
               </button>
             </div>
 
             {rangeFiltered.length === 0 ? (
               <div className="glass-card p-10 text-center">
-                <div className="text-base font-semibold">No results found.</div>
+                <div className="text-base font-semibold">{t('noResultsFound', {}, lang)}</div>
                 <p className="mt-2 text-sm text-ink-secondary">
-                  Try different keywords or check your spelling.
+                  {t('tryDifferentKeywords', {}, lang)}
                 </p>
               </div>
             ) : (
               <NewsSection
-                title="Search Results"
+                title={t('searchResults', {}, lang)}
                 hint=""
                 tone="accent"
                 items={rangeFiltered}
@@ -127,28 +127,29 @@ export default function App() {
             )}
           </>
         ) : (
-          /* Browse mode: split sections */
+          /* Browse mode */
           <>
             <NewsSection
-              title="AI Industry"
-              hint="Models, agents, chips, policy, research."
+              title={t('sectionAi', {}, lang)}
+              hint={t('sectionAiHint', {}, lang)}
               tone="accent"
               items={aiItems}
             />
 
             <NewsSection
-              title="Elon Musk's Companies"
-              hint="Tesla, SpaceX, X, Neuralink, The Boring Company, xAI, Starlink."
+              title={t('sectionMusk', {}, lang)}
+              hint={t('sectionMuskHint', {}, lang)}
               tone="musk"
               items={muskItems}
             />
 
             {rangeFiltered.length === 0 && (
               <div className="glass-card p-10 text-center">
-                <div className="text-base font-semibold">No news matching your filters.</div>
+                <div className="text-base font-semibold">{t('noNewsMatching', {}, lang)}</div>
                 <p className="mt-2 text-sm text-ink-secondary">
-                  Try widening the date range, clearing the search, or run{' '}
-                  <code className="pill">npm run fetch-news</code> to refresh the data.
+                  {t('tryWidening', {}, lang)}{' '}
+                  <code className="pill mx-2">npm run fetch-news</code>{' '}
+                  {t('toRefreshData', {}, lang)}
                 </p>
               </div>
             )}
@@ -157,10 +158,18 @@ export default function App() {
       </main>
 
       <footer className="border-t border-white/5 py-8 text-center text-xs text-ink-muted">
-        Built with React + Vite + Tailwind &middot; Data from NewsAPI.org &middot; &copy; {new Date().getFullYear()}
+        {t('footer', { year: new Date().getFullYear() }, lang)}
       </footer>
 
       <BackToTop />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LangProvider>
+      <AppContent />
+    </LangProvider>
   );
 }
