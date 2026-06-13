@@ -1,12 +1,38 @@
 # AI & Elon Musk Daily News
 
-> 一个每日更新的极简 Web 门户，聚合 **AI 行业** 与 **埃隆·马斯克旗下公司** 的最新新闻。
+每日更新的新闻门户，聚合 **AI 行业** 与 **埃隆·马斯克旗下公司** 的最新资讯，支持中英文一键切换。
 
-- ⚡ 前端：**React 18 + Vite + Tailwind CSS**
-- 📰 数据源：[NewsAPI.org](https://newsapi.org)（也可手动写入 JSON）
-- 🌓 深色 / 浅色主题切换
-- 🔎 搜索、按分类/公司/主题筛选
-- 📅 今日 / 最近一周切换
+在线地址：https://ai-and-elon-musk-companies-news.vercel.app/
+
+---
+
+## 功能特性
+
+- 杂志风格 Hero 布局：1 张大图头条 + 2 张小图头条，全屏图片叠加文字
+- 新闻卡片展示：缩略图、彩色分类边条、摘要截断（line-clamp-2）、来源与日期
+- 多维度筛选：Today / This Week 切换，Category / Company / Topic 下拉过滤
+- 实时搜索：输入即搜，自动隐藏 Hero 聚焦结果
+- EN / CN 一键切换：UI 文案与新闻内容同步翻译
+- 入场动画：Hero 左右滑入 + 卡片依次上浮
+- 回到顶部悬浮按钮
+- SEO 优化：Open Graph、Twitter Cards、canonical URL
+- Google Analytics 4 接入
+
+---
+
+## 技术栈
+
+| 类别 | 技术 |
+|------|------|
+| 框架 | React 18 |
+| 构建 | Vite 5 |
+| 样式 | Tailwind CSS 3 |
+| 图标 | Lucide React |
+| 数据源 | NewsAPI.org |
+| 翻译 | 百度翻译 API（通用文本翻译） |
+| 自动化 | GitHub Actions（每天 UTC 14:00） |
+| 部署 | Vercel（git push 后自动触发） |
+| 分析 | Google Analytics 4 |
 
 ---
 
@@ -14,141 +40,167 @@
 
 ```
 .
+├── .github/
+│   └── workflows/
+│       └── daily-fetch-news.yml    # 每日自动拉取新闻并翻译
+├── src/
+│   ├── main.jsx                    # 入口
+│   ├── App.jsx                     # 主应用
+│   ├── index.css                   # Tailwind + 全局样式
+│   ├── i18n.js                     # EN/CN 双语字典
+│   ├── components/
+│   │   ├── Navbar.jsx              # Logo + 搜索框 + 语言切换
+│   │   ├── Hero.jsx                # DAILY BRIEF 头条区（大卡+双小卡）
+│   │   ├── TabFilter.jsx           # Today/Week tab + 下拉筛选器
+│   │   ├── NewsSection.jsx         # 新闻分区（AI / Musk Companies）
+│   │   ├── NewsCard.jsx            # 新闻卡片组件
+│   │   ├── TagPill.jsx             # 分类标签胶囊
+│   │   ├── LangToggle.jsx          # EN/CN 语言切换按钮
+│   │   ├── BackToTop.jsx           # 回到顶部按钮
+│   │   └── Drawer.jsx              # 已废弃（保留文件但不再使用）
+│   ├── context/
+│   │   └── LangContext.jsx          # React Context 管理语言状态
+│   ├── data/                       # 每日新闻 JSON（脚本自动生成）
+│   │   ├── news-2026-06-13.json
+│   │   └── ...
+│   └── utils/
+│       ├── loadNews.js             # 动态读取 news-*.json，按日期过滤
+│       └── constants.js            # 公司列表、主题列表、颜色常量
+├── scripts/
+│   └── fetch-news.mjs              # 核心：调 NewsAPI → 过滤 → 百度翻译 → 写 JSON
 ├── index.html
 ├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
 ├── postcss.config.js
-├── .env.example
-├── src/
-│   ├── main.jsx             # 入口
-│   ├── App.jsx              # 主应用
-│   ├── index.css            # Tailwind + 全局样式
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── TabFilter.jsx
-│   │   ├── NewsSection.jsx
-│   │   ├── NewsCard.jsx
-│   │   ├── TagPill.jsx
-│   │   └── Drawer.jsx
-│   ├── data/                # 每日新闻 JSON（由 fetch-news 脚本生成）
-│   │   ├── news-2026-06-08.json
-│   │   └── ...
-│   └── utils/
-│       ├── loadNews.js      # 动态读取 news-*.json
-│       └── constants.js
-└── scripts/
-    └── fetch-news.mjs       # 调 NewsAPI，写入 src/data/news-YYYY-MM-DD.json
+└── .env.example                     # 环境变量模板
 ```
 
 ---
 
 ## 快速开始
 
-### 1) 装 Node.js
+### 前置条件
 
-需要 **Node.js ≥ 18**。去 <https://nodejs.org> 下载安装 LTS 版本（Windows 安装包即可），一路下一步。装完后在 PowerShell 里执行：
+Node.js >= 18。
 
-```powershell
-node --version   # 例如 v20.18.0
-npm --version    # 例如 10.8.2
-```
+### 安装依赖
 
-### 2) 安装项目依赖
-
-在项目根目录执行：
-
-```powershell
-cd "C:\Users\qq825\Desktop\MyProgram\AI-and-Elon Musk-Companies-NEWS"
+```bash
 npm install
 ```
 
-### 3) 启动开发服务器
+### 启动开发服务器
 
-```powershell
+```bash
 npm run dev
 ```
 
-浏览器访问终端打印的地址（通常是 <http://localhost:5173>）。你应该能看到首页 + Hero + 今日新闻列表——因为 `src/data/news-2026-06-08.json` 里已经塞了示例数据。
+浏览器访问终端打印的地址（通常是 http://localhost:5173）。
 
-### 4) 生产构建
+### 生产构建
 
-```powershell
+```bash
 npm run build    # 产物在 dist/
 npm run preview  # 本地预览 dist/
 ```
 
 ---
 
-## 如何接入真实新闻（NewsAPI.org）
+## 环境变量配置
 
-1. 去 <https://newsapi.org/register> 注册，拿一个免费 API key。
-2. 复制 `.env.example` 成 `.env.local`，然后把 key 填进去：
+复制 `.env.example` 为 `.env.local`：
 
-   ```
-   NEWS_API_KEY=你的key写这里
-   ```
+```bash
+cp .env.example .env.local
+```
 
-   > 如果你的网络环境需要走代理才能访问 newsapi.org，再加一行：
-   >
-   > ```
-   > HTTPS_PROXY=http://127.0.0.1:7890
-   > ```
-   > （脚本会尝试使用 `https-proxy-agent`，请先 `npm i -D https-proxy-agent`）
+`.env.local` 配置项说明：
 
-3. 拉取今天的新闻并写入 `src/data/news-YYYY-MM-DD.json`：
+| 变量 | 必填 | 说明 |
+|------|------|------|
+| `NEWS_API_KEY` | 是 | NewsAPI.org 的 API key，注册地址 https://newsapi.org |
+| `HTTPS_PROXY` | 否 | 代理地址，如 `http://127.0.0.1:7890`。需要先安装 `https-proxy-agent` |
+| `BAIDU_APP_ID` | 否 | 百度翻译 API 的 APP ID，用于自动翻译标题和摘要为中文 |
+| `BAIDU_SECRET_KEY` | 否 | 百度翻译 API 的密钥 |
 
-   ```powershell
-   npm run fetch-news
-   ```
+### 手动拉取新闻
 
-4. 刷新浏览器即可看到新数据。
+```bash
+npm run fetch-news
+```
 
-> **建议的日常流程**：每天早上跑一次 `npm run fetch-news` → commit → 部署。Vercel/Netlify 会自动重新构建。
+该命令会调用 NewsAPI 拉取当天新闻，经过 4 层过滤后写入 `src/data/news-YYYY-MM-DD.json`。如果配置了百度翻译，会同时生成中文标题和摘要。
 
 ---
 
 ## 数据字段说明
 
-每条新闻（`items[]` 中的对象）：
+每条新闻 item 的字段：
 
-| 字段 | 含义 | 必填 |
+| 字段 | 类型 | 说明 |
 |------|------|------|
-| `title` | 标题 | ✅ |
-| `summary` | 摘要 / 描述 | 建议 |
-| `url` | 原文链接 | ✅ |
-| `source` | 媒体名称 | ✅ |
-| `publishedAt` | ISO 时间，如 `2026-06-08T06:20:00Z` | ✅ |
-| `category` | `ai` 或 `musk` | ✅ |
-| `company` | 当 `category=musk` 时填写：`Tesla` / `SpaceX` / `X` / `Neuralink` / `The Boring Company` / `xAI` / `Starlink` / `Other` | 条件必填 |
-| `topic` | `大模型` / `多模态` / `Agent` / `机器人` / `自动驾驶` / `芯片` / `政策` / `投资并购` / `产品发布` / `其他` | ✅ |
-| `topNews` | `true` 表示显示在 Hero 头条区 | 可选 |
-| `imageUrl` | 封面图（当前 MVP 未展示，但可留作后续扩展） | 可选 |
+| `id` | string | 唯一标识，格式 `newsapi-{timestamp}-{idx}` |
+| `title` | string | 英文标题 |
+| `summary` | string | 英文摘要 |
+| `url` | string | 原文链接 |
+| `source` | string | 媒体来源名称 |
+| `publishedAt` | string | ISO 时间，如 `2026-06-13T04:20:00Z` |
+| `imageUrl` | string/null | 封面图片 URL |
+| `category` | string | 分类：`ai` 或 `musk` |
+| `company` | string/null | 当 category 为 musk 时填写：Tesla / SpaceX / X / Neuralink / The Boring Company / xAI / Starlink / Other |
+| `topic` | string | 主题标签：LLMs / Multimodal / Agents / Robotics / Autonomous / Chips / Policy / Funding & M&A / Product Launch / Research / Other |
+| `topNews` | boolean | 是否显示在 Hero 头条区 |
+| `titleZh` | string/null | 百度翻译的中文标题 |
+| `summaryZh` | string/null | 百度翻译的中文摘要 |
 
 ---
 
-## 常见问题
+## 部署方式
 
-**Q: 首页一片空白，控制台报错 `Failed to fetch dynamically imported module`？**
-A: 说明 `src/data/` 下没有匹配 `news-*.json` 的文件。跑一次 `npm run fetch-news` 或手动放一个进去（文件名必须是 `news-YYYY-MM-DD.json`）。
+项目采用 **GitHub Actions + Vercel** 全自动部署流程：
 
-**Q: NewsAPI 免费额度只有 100 次/天，不够用怎么办？**
-A: 100 次/天已经够每天抓一次。可以升级 Pro（$10/月），或换成 RSS 源自己解析。
+1. **GitHub Actions**（`.github/workflows/daily-fetch-news.yml`）：每天 UTC 14:00 自动运行 `fetch-news.mjs`，拉取新闻并翻译后 commit 到仓库。
+2. **Vercel**：检测到 git push 后自动重新构建和部署，无需人工干预。
 
-**Q: 想把它部署到网上？**
-A: 直接推送 GitHub，然后在 [Vercel](https://vercel.com) 或 [Netlify](https://netlify.com) 导入仓库，框架选 Vite，一键部署。`dist/` 就是静态站。
+### GitHub Secrets 配置
 
-**Q: 能否接 AI 摘要能力？**
-A: 架构上预留了——在 `scripts/fetch-news.mjs` 的 `buildItem()` 里，对每条新闻额外调一次 LLM API 即可把 `description` 替换成中文摘要。当前 MVP 为了省成本和时间没有接。
+在 GitHub 仓库 Settings > Secrets and variables > Actions 中添加以下 secrets：
+
+| Secret 名称 | 说明 |
+|-------------|------|
+| `NEWS_API_KEY` | NewsAPI.org 的 API Key |
+| `BAIDU_APP_ID` | 百度翻译 APP ID |
+| `BAIDU_SECRET_KEY` | 百度翻译密钥 |
+
+> `GITHUB_TOKEN` 由 GitHub Actions 自动提供，无需手动配置。
+
+### 颜色系统
+
+| 用途 | 颜色值 | 名称 |
+|------|--------|------|
+| 背景色 | `#0B1220` | 深空蓝 |
+| 强调色 | `#00E5FF` | 电光青 |
+| Musk 区强调色 | `#E11D48` | 马斯克红 |
 
 ---
 
-## 下一步的可选扩展
+## FAQ
 
-- [ ] 用 GitHub Actions + Secret + cron 自动每天跑一次 `fetch-news`
-- [ ] 加图片封面（NewsAPI 返回的 `urlToImage`）
-- [ ] 加"收藏"功能（localStorage）
-- [ ] 邮件 / RSS 订阅每日摘要
-- [ ] 接入 LLM 生成中文摘要
-- [ ] 多语言（中/英切换）
+**Q: 首页一片空白？**
+A: `src/data/` 目录下没有匹配 `news-*.json` 的文件。运行一次 `npm run fetch-news` 即可。
+
+**Q: NewsAPI 免费额度不够用怎么办？**
+A: 免费版 100 次/天已够每天抓取一次。可升级 Pro（$10/月），或更换数据源。
+
+**Q: 百度翻译报频率限制错误？**
+A: 脚本内置了指数退避重试机制（最多 3 次），并在每条请求间间隔 1.5 秒。如仍频繁报错，检查免费额度是否用完或考虑升级。
+
+**Q: 如何手动触发 GitHub Actions？**
+A: 在仓库的 Actions 页面找到 "Daily Fetch News" 工作流，点击 "Run workflow" 即可手动触发。
+
+**Q: Drawer 组件为什么还在代码里？**
+A: 该组件已被废弃不再使用，保留文件仅为历史记录，不影响功能。
+
+**Q: 项目是否支持浅色主题？**
+A: 已移除浅色模式，当前仅支持深色主题。
