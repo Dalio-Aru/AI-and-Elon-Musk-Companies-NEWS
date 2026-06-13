@@ -1,5 +1,8 @@
 name: Daily Fetch News - 14:00 UTC
 
+permissions:
+  contents: write
+
 on:
   # 每天 UTC 14:00 运行
   schedule:
@@ -38,6 +41,8 @@ jobs:
 
       # 提交和推送变更
       - name: Commit and push if news changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions Bot"
