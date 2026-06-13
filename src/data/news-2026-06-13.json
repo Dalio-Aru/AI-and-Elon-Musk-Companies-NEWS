@@ -1,10 +1,10 @@
 {
   "date": "2026-06-13",
-  "fetchedAt": "2026-06-13T06:33:24.027Z",
+  "fetchedAt": "2026-06-13T06:43:58.425Z",
   "source": "newsapi.org",
   "items": [
     {
-      "id": "newsapi-1781332388197-94",
+      "id": "newsapi-1781333024331-96",
       "title": "Live updates: Bitcoin in volatile trading above $63,000, DOGE unchanged",
       "summary": "Crypto firmed across the board on the largest listing in history, but the token most tied to Elon Musk traded right in line with the market.",
       "url": "https://www.coindesk.com/tech/2026/06/12/live-updates-bitcoin-in-volatile-trading-above-usd63-000-doge-unchanged",
@@ -19,7 +19,7 @@
       "summaryZh": "加密货币在历史上规模最大的上市中全面走强，但与埃隆·马斯克关系最密切的代币交易与市场走势一致。"
     },
     {
-      "id": "newsapi-1781332388197-95",
+      "id": "newsapi-1781333024331-97",
       "title": "'I was employee number one': SpaceX co-founder reacts to firm's market debut",
       "summary": "The BBC's Michelle Fleury spoke to Tom Mueller, who was one of the company's founders alongside Elon Musk in 2002.",
       "url": "https://www.bbc.com/news/videos/cvgjx68nyvmo",
@@ -34,7 +34,7 @@
       "summaryZh": "英国广播公司的Michelle Fleury采访了Tom Mueller，他是该公司的创始人之一，与埃隆·马斯克一起于2002年创立。"
     },
     {
-      "id": "newsapi-1781332388197-99",
+      "id": "newsapi-1781333024331-101",
       "title": "SpaceX's crypto-traded IPO was sharply falling. It now points upward to a $2.4 trillion valuation",
       "summary": "The SPCX perpetual on Hyperliquid has bounced from this week’s lows, while Bloomberg says other shadow markets now imply a first-day gain of more than 35%.",
       "url": "https://www.coindesk.com/markets/2026/06/12/spacex-s-crypto-traded-ipo-was-sharply-falling-it-now-points-upward-to-a-usd2-4-trillion-valuation",
@@ -49,22 +49,7 @@
       "summaryZh": "超级液体上的SPCX指数已经从本周的低点反弹，而彭博社表示，其他影子市场现在意味着首日涨幅超过35%。"
     },
     {
-      "id": "newsapi-1781332388195-26",
-      "title": "ChatGPT hits a billion monthly app users despite souring public AI sentiment",
-      "summary": "ChatGPT reached a billion monthly users in May despite growing unease over its ethical and environmental impacts.",
-      "url": "https://www.cnbc.com/2026/06/12/chatgpt-a-billion-monthly-app-users-despite-souring-public-ai-sentiment.html",
-      "source": "CNBC",
-      "publishedAt": "2026-06-12T06:07:18Z",
-      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108319972-1781129396110-gettyimages-2263468705-AFP_99BR6XA.jpeg?v=1781129422&w=1920&h=1080",
-      "category": "ai",
-      "company": null,
-      "topic": "Other",
-      "topNews": true,
-      "titleZh": "尽管公众的人工智能情绪恶化，但ChatGPT每月仍有10亿应用用户",
-      "summaryZh": "尽管人们对ChatGPT的道德和环境影响越来越不安，但它在5月份的月用户数达到了10亿。"
-    },
-    {
-      "id": "newsapi-1781332388197-101",
+      "id": "newsapi-1781333024331-103",
       "title": "CNBC Daily Open: The buyers are back ahead of SpaceX IPO",
       "summary": "SpaceX will start trading on the Nasdaq today after raising $75 billion in its record-breaking IPO, as Wall Street's rally resumes on Iran peace hopes.",
       "url": "https://www.cnbc.com/2026/06/12/spacex-ipo-the-largest-in-history.html",
@@ -79,7 +64,7 @@
       "summaryZh": "随着华尔街对伊朗和平希望的复苏，SpaceX在创纪录的首次公开募股中筹集了750亿美元后，将于今天开始在纳斯达克交易。"
     },
     {
-      "id": "newsapi-1781332388197-130",
+      "id": "newsapi-1781333024332-133",
       "title": "How to trade the SpaceX IPO in Asia's locked-out markets",
       "summary": "With no direct access to the IPO, traders from Seoul to Shanghai are piling into companies along the space supply chain, industry-themed ETFs and Nasdaq 100 Index-tracking funds in hopes of capturing gains",
       "url": "https://www.bloomberg.com/news/articles/2026-06-11/locked-out-of-ipo-asia-investors-find-new-ways-to-bet-on-spacex",
@@ -94,7 +79,7 @@
       "summaryZh": "由于无法直接参与IPO，从首尔到上海的交易员纷纷涌入太空供应链沿线的公司、行业主题ETF和纳斯达克100指数跟踪基金，希望获得收益"
     },
     {
-      "id": "newsapi-1781332388197-134",
+      "id": "newsapi-1781333024332-137",
       "title": "SpaceX's IPO brings Elon Musk closer to becoming the world's first trillionaire",
       "summary": "Elon Musk, already the world's richest man, is set to become a lot richer thanks to SpaceX's blockbuster IPO.",
       "url": "https://www.businessinsider.com/spacex-ipo-elon-musk-net-worth-trillionaire-2026-6#article",
@@ -109,7 +94,7 @@
       "summaryZh": "埃隆·马斯克（Elon Musk）已经是世界上最富有的人，得益于SpaceX的重磅IPO，他将变得更加富有。"
     },
     {
-      "id": "newsapi-1781332388196-75",
+      "id": "newsapi-1781333024330-77",
       "title": "Apple’s Camera Chief Thinks AI Can Give You Superpowers",
       "summary": "The generative features in iOS 27’s new Photos app will add fake pixels to some of your shots, but Apple’s Jon McCormack says the company isn’t using AI “for the sake of AI.”",
       "url": "https://www.wired.com/story/apple-camera-chief-thinks-ai-can-give-you-superpowers/",
