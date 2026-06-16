@@ -1,0 +1,67 @@
+{
+  "date": "2026-06-16",
+  "fetchedAt": "2026-06-16T15:43:32.837Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1781624604259-26",
+      "title": "Cybersecurity vets protest 'dangerous' US government ban on Anthropic's most powerful models",
+      "summary": "A group made up of dozens of cybersecurity experts urged the White House to remove export control restrictions on Anthropic’s models Fable and Mythos, arguing that the order is going to limit the ability of cybersecurity defenders to secure their software and…",
+      "url": "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/",
+      "source": "TechCrunch",
+      "publishedAt": "2026-06-15T15:34:55Z",
+      "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/06/claude-mythos-logo.jpg?resize=1200,800",
+      "category": "ai",
+      "company": null,
+      "topic": "Policy",
+      "topNews": true,
+      "titleZh": "网络安全审查人员抗议美国政府对Anthropic最强大模型的“危险”禁令",
+      "summaryZh": "一个由数十名网络安全专家组成的团体敦促白宫取消对Anthropic的Fable和Mythos模型的出口管制限制，认为该命令将限制网络安全捍卫者保护其软件和…"
+    },
+    {
+      "id": "newsapi-1781624604260-52",
+      "title": "Silicon Valley legend Vinod Khosla tears into ‘idiotic, short-sighted and very selfish’ Gen Z Stanford protests of Google CEO: ‘the stupidity’",
+      "summary": "When hundreds of Stanford graduates walked out on Google CEO Sundar Pichai, Vinod Khosla didn't hold back about the students at his alma mater.",
+      "url": "https://fortune.com/2026/06/15/vinod-khosla-stanford-protest-google-sundar-pichai-walkout/",
+      "source": "Fortune",
+      "publishedAt": "2026-06-15T15:17:28Z",
+      "imageUrl": "https://fortune.com/img-assets/wp-content/uploads/2026/06/GettyImages-2261860426-e1781535381299.jpg?resize=1200,600",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "硅谷传奇人物维诺德·科斯拉（Vinod Khosla）痛斥Z世代斯坦福大学对谷歌首席执行官的抗议：“愚蠢”",
+      "summaryZh": "当数百名斯坦福大学毕业生离开谷歌首席执行官桑达尔·皮查伊时，维诺德·科斯拉对母校的学生毫不犹豫。"
+    },
+    {
+      "id": "newsapi-1781624604261-123",
+      "title": "SpaceX's biggest-ever IPO just grew to $85.7 billion raised",
+      "summary": "SpaceX's IPO underwriters maxed out their share purchases, adding to an already historic amount of money raised.",
+      "url": "https://techcrunch.com/2026/06/15/spacexs-biggest-ever-ipo-just-grew-to-85-7-billion-raised/",
+      "source": "TechCrunch",
+      "publishedAt": "2026-06-15T14:47:18Z",
+      "imageUrl": "https://techcrunch.com/wp-content/uploads/2025/02/musk-getty-inauguration-trump.jpg?resize=1200,897",
+      "category": "musk",
+      "company": "SpaceX",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "SpaceX有史以来最大的IPO刚刚增长到857亿美元",
+      "summaryZh": "SpaceX的IPO承销商最大限度地增加了他们的股票购买量，增加了已经筹集的历史性资金。"
+    },
+    {
+      "id": "newsapi-1781624604261-91",
+      "title": "Nano Dimension Signs Term Sheet with Infinite Epigenetics to Form a Publicly Traded, AI-Powered Preventive Health and Diagnostics Company",
+      "summary": "Nano Dimension Conducted a Rigorous Multi-Month Strategic Review, Assessing Approximately 20 Companies Before Selecting Infinite Epigenetics as the Most Compelling Path to Long-Term Value Creation Proposed Combination Would Deploy Nano Dimension’s Capital Bas…",
+      "url": "https://apnews.com/press-release/globenewswire-mobile/press-release-04ca053b78da9c918b895704356dcca5",
+      "source": "Associated Press",
+      "publishedAt": "2026-06-15T12:35:57Z",
+      "imageUrl": "https://dims.apnews.com/dims4/default/295c329/2147483647/strip/true/crop/675x450+12+0/resize/980x653!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F90%2F29%2F4e3c1cc7446089a9101a7bdff4c8%2Fdefaultshareimage-copy.png",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Nano Dimension与无限表观遗传学签署条款清单，成立一家公开交易、人工智能驱动的预防健康和诊断公司",
+      "summaryZh": "Nano Dimension进行了为期数月的严格战略审查，评估了大约20家公司，然后选择无限表观遗传学作为长期价值创造的最有吸引力的途径。拟议的合并将部署Nano Dimension的资本基础…"
+    }
+  ]
+}
