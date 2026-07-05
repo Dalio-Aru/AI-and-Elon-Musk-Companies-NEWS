@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-05",
+  "fetchedAt": "2026-07-05T15:12:12.648Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1783264325248-96",
+      "title": "We design superyachts for billionaires. Their wishlists are changing, from hyperbaric chambers to WFY setups.",
+      "summary": "Vripack's Marnix Hoekstra and Bart Bouwhuis design luxury superyachts for billionaires. Popular asks include high-end offices and gyms.",
+      "url": "https://www.businessinsider.com/superyacht-trends-according-designer-vripack-gyms-offices-eco-friendly-comfort-2026-7#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-07-04T14:16:51Z",
+      "imageUrl": "https://i.insider.com/6a447c5f360acd489560de2a?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "我们为亿万富翁设计超级游艇。他们的愿望清单正在发生变化，从高压舱到WFY装置。",
+      "summaryZh": "Vripack的Marnix Hoekstra和Bart Bouwhuis为亿万富翁设计豪华超级游艇。受欢迎的问题包括高端办公室和健身房。"
+    },
+    {
+      "id": "newsapi-1783264325248-101",
+      "title": "DOGE self-deletes on July 4th. The grand experiment fell apart long before that.",
+      "summary": "Tech mogul Elon Musk’s band of Silicon Valley disruptors have already moved on as DOGE’s charter is scheduled to expire.",
+      "url": "https://www.politico.com/news/2026/07/04/doge-july-4-white-house-end-00983651",
+      "source": "Politico",
+      "publishedAt": "2026-07-04T14:00:00Z",
+      "imageUrl": "https://s.yimg.com/lo/mysterio/api/05ddd4afef1dda4e727e124e58d39031442258d9703d92e9210b73bceab8f4b7/lightyear_networkapi/resizefill_w1200;quality_80;format_webp/https:%2F%2Fmedia.zenfs.com%2Fen%2Fpolitico_453%2F0daeff975b2fc01db8a5e84ecadd092c",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "DOGE将于7月4日自动删除。这个伟大的实验早在那之前就失败了。",
+      "summaryZh": "随着DOGE的章程即将到期，科技巨头埃隆·马斯克的硅谷破坏者乐队已经离开了。"
+    },
+    {
+      "id": "newsapi-1783264325247-61",
+      "title": "I joined the CIA in my 20s, Google in my 30s, and became an entrepreneur in my 40s. My mantra? 'Sure, I'll try it.'",
+      "summary": "Candice Bryant spent nearly 16 years at the CIA before joining Google. She shares why she left Big Tech and the philosophy that's guided her career.",
+      "url": "https://www.businessinsider.com/cia-google-employee-quit-ai-tech-business-entrepreneur-career-advice-2026-7#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-07-04T11:12:01Z",
+      "imageUrl": "https://i.insider.com/6a4555662680585ce91a328f?width=1200&format=jpeg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "我20多岁加入中情局，30多岁加入谷歌，40多岁成为一名企业家。我的咒语？“当然，我试试。”",
+      "summaryZh": "坎迪斯·布莱恩特在加入谷歌之前，在中央情报局工作了近16年。她分享了自己离开Big Tech的原因以及指导她职业生涯的哲学。"
+    },
+    {
+      "id": "newsapi-1783264325248-81",
+      "title": "Macron and Modi turn on personal charm offensives as France and India race to secure AI investment",
+      "summary": "Macron and Modi are courting tech CEOs as France and India seek AI data center investment and cloud infrastructure.",
+      "url": "https://www.cnbc.com/2026/07/04/macron-modi-ai-infrastructure-tech-ceos.html",
+      "source": "CNBC",
+      "publishedAt": "2026-07-04T05:00:01Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108267442-1771520012938-gettyimages-2261851111-AFP_984W8YJ.jpeg?v=1771520056&w=1920&h=1080",
+      "category": "ai",
+      "company": null,
+      "topic": "Funding / M&A",
+      "topNews": true,
+      "titleZh": "马克龙和莫迪开启个人魅力攻势，法国和印度竞相争取人工智能投资",
+      "summaryZh": "随着法国和印度寻求人工智能数据中心投资和云基础设施，马克龙和莫迪正在讨好科技公司的首席执行官。"
+    }
+  ]
+}
