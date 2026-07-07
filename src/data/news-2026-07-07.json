@@ -1,0 +1,82 @@
+{
+  "date": "2026-07-07",
+  "fetchedAt": "2026-07-07T16:29:53.875Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1783441782959-95",
+      "title": "Rivian, Tesla and the 'Holly Index': How to trade the new EV Main Street battle",
+      "summary": "Mike Khouw gives a trade on Rivian and Tesla, informed by his wife's recent auto purchase.",
+      "url": "https://www.cnbc.com/2026/07/06/rivian-tesla-and-the-holly-index-how-to-trade-the-new-ev-main-street-battle.html",
+      "source": "CNBC",
+      "publishedAt": "2026-07-06T16:11:03Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108323620-1781736140924-gettyimages-2281487412-AFP_B7GA88D.jpeg?v=1781736205&w=1920&h=1080",
+      "category": "musk",
+      "company": "Tesla",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Rivian、特斯拉和“Holly指数”：如何交易新的电动汽车主街之战",
+      "summaryZh": "Mike Khouw根据妻子最近购买汽车的消息，对Rivian和特斯拉进行了交易。"
+    },
+    {
+      "id": "newsapi-1783441782959-99",
+      "title": "'Go out and buy a Dell': President Trump's backing of the PC-maker has shares surging",
+      "summary": "Dell stock surged as much as 9% as the president highlighted a $6.25 billion contribution to Trump Accounts made by Michael Dell, Dell's founder.",
+      "url": "https://www.businessinsider.com/dell-stock-price-surges-9-after-president-trump-account-comments-2026-7#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-07-06T16:05:35Z",
+      "imageUrl": "https://i.insider.com/6a4bc54c94175b768171f266?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "“走出去买一台戴尔”：特朗普总统对这家个人电脑制造商的支持导致股价飙升",
+      "summaryZh": "戴尔股价飙升9%，总统强调戴尔创始人迈克尔·戴尔向特朗普账户捐款62.5亿美元。"
+    },
+    {
+      "id": "newsapi-1783441782958-65",
+      "title": "Microsoft lays off nearly 5,000 employees across Xbox, commercial sales",
+      "summary": "Microsoft cut around 4,800 roles, or 2.1% of its global workforce, on Monday — the latest in a series of layoffs that’s stoking fears of AI replacing jobs. The layoffs will hit Xbox and commercial sales the hardest.",
+      "url": "https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sales/",
+      "source": "TechCrunch",
+      "publishedAt": "2026-07-06T15:08:46Z",
+      "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/05/microsoft-logo.jpg?resize=1200,800",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "微软在Xbox和商业销售部门裁员近5000人",
+      "summaryZh": "微软周一裁减了约4800个职位，占其全球员工总数的2.1%，这是一系列裁员中的最新一次，这些裁员引发了人们对人工智能取代工作的担忧。裁员将对Xbox和商业销售造成最严重的打击。"
+    },
+    {
+      "id": "newsapi-1783441782960-117",
+      "title": "Stockpicker Dan Sundheim had a monster June. Here's how D1 and other Tiger Cubs did.",
+      "summary": "Stock-picking hedge funds are generally performing well in 2026 despite a rough first quarter.",
+      "url": "https://www.businessinsider.com/tiger-cubs-june-performance-first-half-d1-coatue-light-street-2026-7#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-07-06T14:55:10Z",
+      "imageUrl": "https://i.insider.com/6a4bb02a5dc133dbf310d154?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "拾荒者Dan Sundheim有一个怪物六月。以下是D1和其他老虎小熊队的表现。",
+      "summaryZh": "尽管第一季度表现不佳，但选股对冲基金在2026年总体表现良好。"
+    },
+    {
+      "id": "newsapi-1783441782960-122",
+      "title": "BYD’s flagship electric sedan receives 65,000 locked-in orders",
+      "summary": "The Seal 08 boasts “the power of a million-dollar vehicle,” but can be bought for under $30,000 in China. After it went on sale last week, locked-in orders for BYD’s new flagship electric sedan reached around 65,000 in its first 30 hours.",
+      "url": "http://electrek.co/2026/07/06/byds-flagship-electric-sedan-receives-65000-locked-in-orders/",
+      "source": "Electrek",
+      "publishedAt": "2026-07-06T14:35:27Z",
+      "imageUrl": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/07/BYD-Seal-08-orders.jpeg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "比亚迪旗舰电动轿车收到6.5万份锁定订单",
+      "summaryZh": "海豹08拥有“百万美元汽车的力量”，但在中国可以以不到3万美元的价格买到。上周上市后，比亚迪新旗舰电动轿车的锁定订单在头30个小时内达到了约6.5万辆。"
+    }
+  ]
+}
