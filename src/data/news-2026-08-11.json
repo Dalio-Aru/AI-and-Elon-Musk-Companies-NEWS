@@ -1,0 +1,82 @@
+{
+  "date": "2026-08-11",
+  "fetchedAt": "2026-08-11T14:55:29.269Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1786460119407-27",
+      "title": "3 key details about what Mark Zuckerberg's vision of the AI future would look like for you",
+      "summary": "Meta CEO Mark Zuckerberg says personal AI agents could reshape work, help launch smaller companies, and make entrepreneurship more accessible.",
+      "url": "https://www.businessinsider.com/mark-zuckerberg-vision-ai-future-takeaways-meta-personal-agents-2026-8#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-08-10T14:43:01Z",
+      "imageUrl": "https://i.insider.com/6a79d9260c0bf4e8be52357b?width=1200&format=jpeg",
+      "category": "ai",
+      "company": null,
+      "topic": "Multimodal",
+      "topNews": false,
+      "titleZh": "关于马克·扎克伯格对人工智能未来愿景的3个关键细节",
+      "summaryZh": "Meta首席执行官马克·扎克伯格表示，个人人工智能代理可以重塑工作，帮助创办小公司，并使创业更容易。"
+    },
+    {
+      "id": "newsapi-1786460119408-48",
+      "title": "Archer makes wild deal with Boeing swapping eVTOL startups for equity",
+      "summary": "Archer Aviation is buying three of Boeing’s aerospace subsidiaries: autonomous air-taxi developer Wisk Aero, military drone maker Insitu, and airspace-software firm SkyGrid. The deal also hands Boeing a stake in Archer.\nInvestors loved it. Archer (ACHR) stock…",
+      "url": "http://electrek.co/2026/08/10/archer-acquires-boeing-wisk-insitu-skygrid/",
+      "source": "Electrek",
+      "publishedAt": "2026-08-10T14:35:40Z",
+      "imageUrl": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/02/Archer-Aviation-Starlink.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Archer与波音公司达成疯狂交易，将eVTOL初创公司换成股权",
+      "summaryZh": "Archer Aviation正在收购波音公司的三家航空航天子公司：自动驾驶空中出租车开发商Wisk Aero、军用无人机制造商Insitu和空域软件公司SkyGrid。该交易还使波音公司持有Archer的股份。"
+    },
+    {
+      "id": "newsapi-1786460119410-110",
+      "title": "Musk’s Terafab chip plant will run on gas, not Tesla solar",
+      "summary": "SpaceX confirmed it will power Terafab, its $16.8 billion chip megafactory in Texas, with its own natural gas power plants and “very large battery arrays.” Tesla solar isn’t in the plan.\nThat’s despite Tesla being a partner on the project, and despite Tesla s…",
+      "url": "http://electrek.co/2026/08/10/musk-terafab-gas-power-not-tesla-solar/",
+      "source": "Electrek",
+      "publishedAt": "2026-08-10T13:55:30Z",
+      "imageUrl": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2026/08/Tesla-SpaceX-terafab.jpeg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "category": "musk",
+      "company": "Tesla",
+      "topic": "Chips",
+      "topNews": true,
+      "titleZh": "马斯克的Terafab芯片工厂将使用天然气，而不是特斯拉太阳能",
+      "summaryZh": "太空探索技术公司证实，它将用自己的天然气发电厂和“非常大的电池阵列”为德克萨斯州价值168亿美元的芯片巨型工厂Terafab供电。特斯拉太阳能不在计划中。"
+    },
+    {
+      "id": "newsapi-1786460119410-114",
+      "title": "SpaceX stock rebounds to near $135 IPO price",
+      "summary": "SpaceX reported better-than-expected revenue in its second-quarter earnings report last week.",
+      "url": "https://www.cnbc.com/2026/08/10/spacex-spcx-stock-ipo-price.html",
+      "source": "CNBC",
+      "publishedAt": "2026-08-10T13:36:09Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108321008-1781271149885-Screenshot_2026-06-12_at_92658_AM.png?v=1781271243&w=1920&h=1080",
+      "category": "musk",
+      "company": "SpaceX",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "SpaceX股价反弹至近135美元IPO价格",
+      "summaryZh": "上周，SpaceX在其第二季度财报中公布了好于预期的收入。"
+    },
+    {
+      "id": "newsapi-1786460119409-88",
+      "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
+      "summary": "Discovered Materials raised $9 million to fund the hunt for more novel materials to build more efficient chips.",
+      "url": "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/",
+      "source": "TechCrunch",
+      "publishedAt": "2026-08-10T12:02:11Z",
+      "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/08/discoverd-materials.jpg?resize=1200,800",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "发现的材料正在玩AI打地鼠游戏来寻找更酷的芯片",
+      "summaryZh": "Discovered Materials筹集了900万美元，用于寻找更多新型材料来制造更高效的芯片。"
+    }
+  ]
+}
