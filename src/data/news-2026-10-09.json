@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-09",
+  "fetchedAt": "2026-10-09T19:15:48.116Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1791573338087-103",
+      "title": "Mikey Madison plays a Facebook whistleblower in 'The Social Reckoning.' Here's where the real Frances Haugen is now.",
+      "summary": "Mikey Madison stars in \"The Social Reckoning\" as Frances Haugen, the real-life whistleblower who sparked a Facebook scandal. Here's what she's doing today.",
+      "url": "https://www.businessinsider.com/where-is-frances-haugen-now-the-social-reckoning-2026-9#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-08T19:01:01Z",
+      "imageUrl": "https://i.insider.com/6abd1bd1d15f8a572974c868?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Mikey Madison在《社会清算》中扮演一名脸书告密者。“这就是真正的弗朗西斯·豪根现在所在的地方。",
+      "summaryZh": "Mikey Madison在《社会清算》中饰演弗朗西斯·豪根，她是引发脸书丑闻的真实告密者。这是她今天要做的事。"
+    },
+    {
+      "id": "newsapi-1791573338085-52",
+      "title": "Jev, an AI for making quick decisions, has been a viral hit in Silicon Valley. But OpenAI is hot on its heels",
+      "summary": "After helping develop ChatGPT, TypeSafe CEO Diogo Almeida spent two years building Jev, which went viral with developers. His former employer is now racing to catch up.",
+      "url": "https://fortune.com/2026/10/08/jev-an-ai-for-making-quick-decisions-has-been-a-viral-hit-in-silicon-valley-but-openai-is-hot-on-its-heels/",
+      "source": "Fortune",
+      "publishedAt": "2026-10-08T18:38:30Z",
+      "imageUrl": "https://fortune.com/img-assets/wp-content/uploads/2026/10/TypeSafe-4cd0c377-7a7d-432a-8526-8afbfd3cba02.jpg?resize=1200,600",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Jev是一款能够快速做出决策的人工智能，在硅谷大受欢迎。但OpenAI紧随其后",
+      "summaryZh": "在帮助开发ChatGPT之后，TypeSafe首席执行官Diogo Almeida花了两年时间构建了Jev，它在开发人员中迅速传播开来。他的前雇主现在正争先恐后地追赶。"
+    },
+    {
+      "id": "newsapi-1791573338085-62",
+      "title": "SAP’s Sean Kask: software firms must become AI companies or perish",
+      "summary": "Established software companies have to rebuild their products around AI, not add it as one more feature, SAP’s chief AI strategy officer Sean Kask said. He spoke at Wave by Vento in Turin on Thursday. “Like the famous quip that every company is becoming a sof…",
+      "url": "https://thenextweb.com/news/sap-sean-kask-prior-labs-every-software-company-ai-company-wave-by-vento",
+      "source": "The Next Web",
+      "publishedAt": "2026-10-08T17:23:55Z",
+      "imageUrl": "https://media.thenextweb.com/2026/10/sean-kask-sap-wave-by-vento-turin-speaking-gesturing.jpg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "SAP的Sean Kask：软件公司必须成为人工智能公司，否则就会灭亡",
+      "summaryZh": "SAP首席人工智能战略官Sean Kask表示，成熟的软件公司必须围绕人工智能重建其产品，而不是将其作为另一个功能添加。周四，他在都灵的Wave by Vento发表了讲话。“就像那句著名的俏皮话，每家公司都在成为一家软件公司…"
+    },
+    {
+      "id": "newsapi-1791573338086-89",
+      "title": "Airbnb CEO Brian Chesky says he wishes he were 26 again because the opportunities post-ChatGPT ‘are so much more powerful’",
+      "summary": "Brian Chesky, the cofounder of $95.8 billion Airbnb, says now all it takes is a handful of people to start a company—that “was inconceivable before” AI.",
+      "url": "https://fortune.com/2026/10/08/airbnb-ceo-brian-chesky-wishes-he-were-26-again-because-opportunities-post-chatgpt-more-powerful/",
+      "source": "Fortune",
+      "publishedAt": "2026-10-08T15:02:24Z",
+      "imageUrl": "https://fortune.com/img-assets/wp-content/uploads/2026/10/GettyImages-2276716878-e1791471440800.jpg?resize=1200,600",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "Airbnb首席执行官布莱恩·切斯基表示，他希望自己能再次回到26岁，因为ChatGPT之后的机会“更加强大”",
+      "summaryZh": "价值958亿美元的Airbnb联合创始人Brian Chesky表示，现在只需要少数人就可以创办一家公司——这在人工智能之前是“不可想象的”。"
+    },
+    {
+      "id": "newsapi-1791573338086-96",
+      "title": "ICO secures data protection changes from 10 AI developers, turns to agents",
+      "summary": "Ten of the biggest AI developers have made, or committed to make, changes to how they handle personal data. The UK’s Information Commissioner’s Office (ICO) secured the changes after two years of scrutiny. The data regulator named them on Thursday: Amazon, An…",
+      "url": "https://thenextweb.com/news/ico-ai-developers-data-protection-changes-ai-agents",
+      "source": "The Next Web",
+      "publishedAt": "2026-10-08T14:44:16Z",
+      "imageUrl": "https://media.thenextweb.com/2026/10/smartphone-chatgpt-app-what-can-i-help-with-desk-stand.jpg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "ICO确保10名AI开发人员的数据保护更改，转向代理",
+      "summaryZh": "十大人工智能开发商已经或承诺改变他们处理个人数据的方式。经过两年的审查，英国信息专员办公室（ICO）确保了这些变化。数据监管机构周四公布了他们的名字：亚马逊、安…"
+    }
+  ]
+}
