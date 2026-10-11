@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-11",
+  "fetchedAt": "2026-10-11T18:37:05.856Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1791743817473-43",
+      "title": "Trump Is an Easy Mark for Putin",
+      "summary": "The president’s diesel deal sells out Ukraine, and does nothing for Americans.",
+      "url": "https://www.theatlantic.com/ideas/2026/10/trumps-diesel-deal-sells-out-ukraine/688964/?utm_source=feed",
+      "source": "The Atlantic",
+      "publishedAt": "2026-10-10T18:14:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "特朗普是普京的轻松标记",
+      "summaryZh": "总统的柴油协议出卖了乌克兰，对美国人没有任何帮助。"
+    },
+    {
+      "id": "newsapi-1791743817474-112",
+      "title": "Here's what the new Netflix series about the FTX scandal got wrong, according to former staffers",
+      "summary": "\"The Altruists\" is an eight-episode Netflix series dramatizing the rise and fall of the cryptocurrency exchange under former CEO Sam Bankman-Fried.",
+      "url": "https://www.businessinsider.com/altruists-netflix-ftx-sam-bankman-fried-crypto-reaction-2026-10#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-10T16:38:17Z",
+      "imageUrl": "https://i.insider.com/6aca5818301bb0551f49493f?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Funding / M&A",
+      "topNews": true,
+      "titleZh": "据前工作人员称，以下是Netflix关于FTX丑闻的新系列出错的地方",
+      "summaryZh": "《利他主义者》是一部八集的Netflix系列剧，讲述了前首席执行官Sam Bankman Fried领导下的加密货币交易所的兴衰。"
+    },
+    {
+      "id": "newsapi-1791743817474-73",
+      "title": "Nvidia GPUs are everywhere. Here are the ways companies are accessing them",
+      "summary": "One industry researcher identified over 300 neoclouds that can provide GPU capacity, up about 55% in less than a year.",
+      "url": "https://www.cnbc.com/2026/10/10/nvidia-gpus-are-everywhere-heres-how-companies-access-them.html",
+      "source": "CNBC",
+      "publishedAt": "2026-10-10T11:00:01Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108363240-1789497350287-gettyimages-2294936606-DREAMFORCE_2026.jpeg?v=1791240406&w=1920&h=1080",
+      "category": "ai",
+      "company": null,
+      "topic": "Chips",
+      "topNews": true,
+      "titleZh": "Nvidia GPU无处不在。以下是公司访问它们的方式",
+      "summaryZh": "一位行业研究人员确定了300多个可以提供GPU容量的新云，在不到一年的时间里增长了约55%。"
+    },
+    {
+      "id": "newsapi-1791743817474-83",
+      "title": "He needed a caregiver as his body shut down. AI found him the one.",
+      "summary": "Home Instead, a home healthcare services company, connected Christina Evers and Merrill Hale, who has ALS and needs full-time care.",
+      "url": "https://www.businessinsider.com/caregiving-ai-long-term-care-als-honor-home-instead-2026-10#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-10T08:30:01Z",
+      "imageUrl": "https://i.insider.com/6ac92cee7bf24b4467e69d20?width=1200&format=jpeg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "当他的身体停止运作时，他需要一个护理人员。AI找到了他的真命天子。",
+      "summaryZh": "Home Not是一家家庭医疗服务公司，将患有ALS并需要全职护理的Christina Evers和Merrill Hale联系起来。"
+    }
+  ]
+}
