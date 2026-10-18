@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-18",
+  "fetchedAt": "2026-10-18T17:04:37.056Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1792343065638-99",
+      "title": "Elon Musk settles lawsuits over $1 million voter giveaway",
+      "summary": "In 2024, Elon Musk promised to give away $1 million a day to a randomly selected registered voter in a swing state. That prompted legal challenges, raised questions about its legality, and drew lawsuits from two Arizona residents claiming the lottery was a fr…",
+      "url": "https://www.theverge.com/tech/1013431/elon-musk-settles-lawsuits-over-1-million-voter-giveaway",
+      "source": "The Verge",
+      "publishedAt": "2026-10-17T16:39:44Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/STKE012_SPACEX_IPO_2026_A.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "埃隆·马斯克就100万美元的选民赠品诉讼达成和解",
+      "summaryZh": "2024年，埃隆·马斯克承诺每天向摇摆州随机选择的一名登记选民捐赠100万美元。这引发了法律挑战，对其合法性提出了质疑，并引发了两名亚利桑那州居民的诉讼，声称彩票是一种欺诈行为…"
+    },
+    {
+      "id": "newsapi-1792343065638-102",
+      "title": "Elon Musk is pouring money into the midterms. Here's where he's giving the most.",
+      "summary": "Elon Musk is giving reams of cash to Republicans, and most of it's going to Ken Paxton in Texas.",
+      "url": "https://www.businessinsider.com/elon-musk-spending-midterm-election-texas-paxton-2026-10#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-17T16:31:38Z",
+      "imageUrl": "https://i.insider.com/6ad247b1adb77227909a6648?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "埃隆·马斯克正在为中期选举投入大量资金。这就是他付出最多的地方。",
+      "summaryZh": "埃隆·马斯克正在向共和党人提供大量现金，其中大部分将捐给德克萨斯州的肯·帕克斯顿。"
+    },
+    {
+      "id": "newsapi-1792343065639-120",
+      "title": "Your Office Isn’t Spy Proof",
+      "summary": "",
+      "url": "https://www.theinformation.com/articles/office-spy-proof",
+      "source": "The Information",
+      "publishedAt": "2026-10-17T15:01:05Z",
+      "imageUrl": null,
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "你的办公室不是防间谍的"
+    },
+    {
+      "id": "newsapi-1792343065639-131",
+      "title": "Jeff Bezos says ‘millions of people’ will be living in space by 2045—and robots will commute on our behalf to the moon",
+      "summary": "No one enjoys the dreaded commute to work, and by 2045, Amazon founder Jeff Bezos predicts we’ll have robots to do that for us. After all, in his vision we’ll be venturing to other planets for our 9-to-5's.",
+      "url": "https://fortune.com/article/amazon-founder-jeff-bezos-says-millions-of-people-will-be-living-in-space-by-2045-and-robots-will-commute-on-our-behalf-to-the-moon/",
+      "source": "Fortune",
+      "publishedAt": "2026-10-17T13:21:58Z",
+      "imageUrl": "https://fortune.com/img-assets/wp-content/uploads/2025/10/GettyImages-1329731718.jpg?resize=1200,600",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "杰夫·贝佐斯说，到2045年，“数百万人”将生活在太空中，机器人将代表我们前往月球",
+      "summaryZh": "没有人喜欢可怕的通勤，到2045年，亚马逊创始人杰夫·贝佐斯预测，我们将有机器人为我们完成这项任务。毕竟，在他的愿景中，我们将在朝九晚五的时间里冒险前往其他星球。"
+    },
+    {
+      "id": "newsapi-1792343065637-60",
+      "title": "J Mascis has nothing better to do",
+      "summary": "Dinosaur Jr. frontman J Mascis is known as something of a slacker guitar god. He stands stoically onstage, barely moving, as he seemingly effortlessly works through deft guitar solos and lopsided riffs. Unfortunately, Mascis has developed a similar reputation…",
+      "url": "https://www.theverge.com/entertainment/1012442/j-mascis-dinosaur-jr-fender-interview",
+      "source": "The Verge",
+      "publishedAt": "2026-10-17T12:22:11Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/J-Mascis-Dinosaur-Jr-interview-Babys-All-Right.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "J Mascis没有更好的事情可做",
+      "summaryZh": "《Dinosaur Jr.》的主唱J Mascis被称为懒散的吉他神。他坚忍地站在舞台上，几乎一动不动，似乎毫不费力地完成了灵巧的吉他独奏和不对称的即兴重复段。不幸的是，Mascis也有类似的名声…"
+    }
+  ]
+}
