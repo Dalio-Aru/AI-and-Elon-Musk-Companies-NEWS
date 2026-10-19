@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-19",
+  "fetchedAt": "2026-10-19T19:39:09.494Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1792438738430-38",
+      "title": "Microsoft pulls out of Nscale's Essex AI data centre",
+      "summary": "Tech firm Nscale says it is still committed to building the site in Essex.",
+      "url": "https://www.bbc.com/news/articles/c9m26kl5y7epo",
+      "source": "BBC News",
+      "publishedAt": "2026-10-18T19:12:52Z",
+      "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/46c0/live/18b0c090-cb13-11f1-a9ef-8b4e735f71f0.jpg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "微软退出Nscale的Essex AI数据中心",
+      "summaryZh": "科技公司Nscale表示，它仍致力于在埃塞克斯建造该工厂。"
+    },
+    {
+      "id": "newsapi-1792438738431-105",
+      "title": "Ukraine and the U.S. are at odds over Starshield. Here's what to know",
+      "summary": "Ukrainian President Volodymyr Zelenskyy has said he believes the U.S. government is behind his military's loss of normal access to the key satellite communications service used by the Ukrainian military.",
+      "url": "https://www.npr.org/2026/10/18/nx-s1-6007382/ukraine-us-starshield-starlink-what-to-know-trump",
+      "source": "NPR",
+      "publishedAt": "2026-10-18T18:38:49Z",
+      "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5101x2869+0+0/resize/1400/quality/85/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ff5%2F9f%2F6ee4e955401a8491a881a8f28365%2Fap26289442815625.jpg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "乌克兰和美国在星盾问题上存在分歧。以下是需要了解的内容",
+      "summaryZh": "乌克兰总统弗拉基米尔·泽连斯基表示，他认为美国政府是乌克兰军队无法正常使用乌克兰军队使用的关键卫星通信服务的幕后黑手。"
+    },
+    {
+      "id": "newsapi-1792438738431-145",
+      "title": "Bessent warns Zelenskyy to 'be very careful' about claims U.S. is throttling Starlink",
+      "summary": "Starlink, high-speed satellite internet provided by Elon Musk's SpaceX, is critical to Ukraine's defense.",
+      "url": "https://www.cnbc.com/2026/10/18/bessent-zelenskyy-starlink-ukarine-war.html",
+      "source": "CNBC",
+      "publishedAt": "2026-10-18T14:48:33Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108374303-1791396694329-gettyimages-2298464628-AFP_D2JK6CL.jpeg?v=1791396718&w=1920&h=1080",
+      "category": "musk",
+      "company": "Starlink",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Bessent警告Zelenskyy“非常小心”美国正在限制Starlink的说法",
+      "summaryZh": "由埃隆·马斯克的太空探索技术公司提供的高速卫星互联网Starlink对乌克兰的国防至关重要。"
+    },
+    {
+      "id": "newsapi-1792438738431-70",
+      "title": "AI companies scraped the web. Now they want to learn how you work.",
+      "summary": "AI firms are paying for company records and recordings of human work. Business Insider explores the data race powering AI agents and robots.",
+      "url": "https://www.businessinsider.com/ai-workplace-data-training-agents-robots#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-18T14:00:01Z",
+      "imageUrl": "https://i.insider.com/6ad262c4adb77227909a676c?width=1200&format=jpeg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "人工智能公司抓取了网络。现在他们想知道你是如何工作的。",
+      "summaryZh": "人工智能公司正在为公司记录和人类工作记录付费。Business Insider探讨了为人工智能代理和机器人提供动力的数据竞赛。"
+    },
+    {
+      "id": "newsapi-1792438738431-80",
+      "title": "OnlyFans Creators Are Pissed That Meta Lets Muse Talk Dirty",
+      "summary": "Adult performers are questioning why Meta allows its AI agent to sext while restricting their social media accounts.",
+      "url": "https://www.wired.com/story/onlyfans-creators-are-pissed-that-meta-lets-muse-talk-dirty/",
+      "source": "Wired",
+      "publishedAt": "2026-10-18T10:30:00Z",
+      "imageUrl": "https://media.wired.com/photos/6ad240695195eb0dd6087017/191:100/w_1280,c_limit/101626_Naughty%20Meta%20Muse%20OnlyFans.jpg",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "只有粉丝创作者对Meta让缪斯说脏话感到愤怒",
+      "summaryZh": "成年表演者质疑为什么Meta允许其AI代理在限制社交媒体账户的同时进行色情短信。"
+    }
+  ]
+}
