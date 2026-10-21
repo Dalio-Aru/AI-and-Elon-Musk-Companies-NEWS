@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-21",
+  "fetchedAt": "2026-10-21T18:23:16.250Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1792606985393-12",
+      "title": "Amazon is phasing out Fire HD tablets, but not without some big discounts first",
+      "summary": "Amazon recently announced it’s phasing out its Fire HD tablets in favor of much pricier Alexa Tablets. While the days of getting an affordable, but good tablet from Amazon seem to be coming to an end, you can still get a fantastic deal on the ad-supported Ama…",
+      "url": "https://www.theverge.com/gadgets/1014565/amazon-fire-hd-10-tablet-deal-sale",
+      "source": "The Verge",
+      "publishedAt": "2026-10-20T18:17:30Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/amazonfirehd.jpg?quality=90&strip=all&crop=0%2C10.704591657108%2C100%2C78.590816685784&w=1200",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "亚马逊正在逐步淘汰Fire HD平板电脑，但首先会有一些大折扣",
+      "summaryZh": "亚马逊最近宣布将逐步淘汰Fire HD平板电脑，转而使用价格高得多的Alexa平板电脑。虽然从亚马逊获得价格实惠但质量好的平板电脑的日子似乎即将结束，但你仍然可以在广告支持的Ama上获得优惠…"
+    },
+    {
+      "id": "newsapi-1792606985394-102",
+      "title": "Segway E3 Go electric scooter launches at $100 off, Bluetti 2,016Wh FridgePower station exclusive $854 in Member Sale, more",
+      "summary": "Our two headliners for today’s edition is the newly launched Segway E3 Go Electric Scooter with $100 savings at $550, which sits just $50 above the current pricing of its sibling E3 Pro model. Next, Bluetti has begun its 4-day Member Sale event that has a sel…",
+      "url": "http://electrek.co/2026/10/20/segway-e3-go-electric-scooter-bluetti-2016wh-fridgepower-station-more/",
+      "source": "Electrek",
+      "publishedAt": "2026-10-20T18:00:00Z",
+      "imageUrl": "https://electrek.co/wp-content/uploads/sites/3/2026/10/Segway-Bluetti-Worx-Greenworks-Hiboy-GDs-FI.jpg?quality=82&strip=all&resize=1200,628",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "Segway E3 Go电动滑板车以100美元的折扣推出，Bluetti 2016Wh冰箱独家会员销售854美元，更多",
+      "summaryZh": "我们今天的两个头条新闻是新推出的Segway E3 Go电动滑板车，以550美元的价格节省了100美元，仅比其兄弟E3 Pro型号的当前价格高出50美元。接下来，Bluetti开始了为期4天的会员销售活动，该活动有一个独特的…"
+    },
+    {
+      "id": "newsapi-1792606985394-111",
+      "title": "Elon Musk says 'AI and robots' are the only way to solve America's debt burden",
+      "summary": "Elon Musk estimated that \"digital superintelligence\" could boost the global output of goods and services by 20% to 30%.",
+      "url": "https://www.businessinsider.com/elon-musk-ai-robots-only-way-solve-debt-2026-10#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-20T17:45:19Z",
+      "imageUrl": "https://i.insider.com/6ad79bfa2428f6b4558140a4?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "埃隆·马斯克表示，“人工智能和机器人”是解决美国债务负担的唯一途径",
+      "summaryZh": "埃隆·马斯克估计，“数字超级智能”可以将全球商品和服务产出提高20%至30%。"
+    },
+    {
+      "id": "newsapi-1792606985394-119",
+      "title": "If Elon Musk gifts SpaceX stock through Trump Accounts, it will come with a catch",
+      "summary": "Elon Musk's planned SpaceX stock donation could come with strings attached if he uses Trump Accounts. New Treasury rules limit when children can sell shares.",
+      "url": "https://www.cnbc.com/2026/10/20/musk-spacex-trump-account-stock-rules.html",
+      "source": "CNBC",
+      "publishedAt": "2026-10-20T17:29:38Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/108433898-1792439982335-gettyimages-2299248528-wm020115_ej7axcme.jpeg?v=1792440027&w=1920&h=1080",
+      "category": "musk",
+      "company": "SpaceX",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "如果埃隆·马斯克通过特朗普账户赠送SpaceX股票，那将是一个陷阱",
+      "summaryZh": "如果埃隆·马斯克使用特朗普账户，他计划捐赠的SpaceX股票可能会附带条件。新的财政部规定限制了儿童出售股票的时间。"
+    },
+    {
+      "id": "newsapi-1792606985394-139",
+      "title": "Elon Musk says money will be 'irrelevant' if his vision of a multiplanetary future comes true",
+      "summary": "Elon Musk says \"money becomes irrelevant\" in a multiplanetary economy, and nearly all of his fortune will be taxed away within a few generations.",
+      "url": "https://www.businessinsider.com/elon-musk-money-irrelevant-ai-robots-space-generational-wealth-taxes-2026-10#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-10-20T16:03:30Z",
+      "imageUrl": "https://i.insider.com/6ad774b0adb77227909a7383?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Multimodal",
+      "topNews": false,
+      "titleZh": "埃隆·马斯克表示，如果他对多平面未来的愿景成真，金钱将“无关紧要”",
+      "summaryZh": "埃隆·马斯克表示，在多平台经济中，“金钱变得无关紧要”，他几乎所有的财富都将在几代人内被征税。"
+    }
+  ]
+}
