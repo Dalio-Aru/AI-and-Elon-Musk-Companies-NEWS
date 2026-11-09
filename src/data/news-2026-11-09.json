@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-09",
+  "fetchedAt": "2026-11-09T23:16:52.299Z",
+  "source": "newsapi.org",
+  "items": [
+    {
+      "id": "newsapi-1794266202161-35",
+      "title": "Here’s the full text of Jensen Huang’s memo to Nvidia",
+      "summary": "On Sunday, Nvidia announced it was launching an investigation into CEO Jensen Huang's relationship with Alice Huang, an AI executive and agent of the Chinese government. In addition to the Board of Directors announcing the investigation, Huang sent a memo to …",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia",
+      "source": "The Verge",
+      "publishedAt": "2026-11-08T22:54:50Z",
+      "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/gettyimages-2285784039.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "category": "ai",
+      "company": null,
+      "topic": "Chips",
+      "topNews": true,
+      "titleZh": "这是黄仁勋给英伟达的备忘录全文",
+      "summaryZh": "周日，英伟达宣布将对首席执行官黄仁勋与人工智能高管兼中国政府代理人黄的关系展开调查。除了董事会宣布调查外，黄还向…发送了一份备忘录…"
+    },
+    {
+      "id": "newsapi-1794266202163-115",
+      "title": "Chewy and other companies pull ads from 'I've Had It' podcast after hosts laugh at 'insensitive' Charlie Kirk joke",
+      "summary": "Hosts Jennifer Welch and Angie Sullivan apologized for laughing at a Charlie Kirk joke on their podcast in an Instagram post on Saturday.",
+      "url": "https://www.businessinsider.com/ive-had-it-podcast-charlie-kirk-joke-advertisers-chewy-2026-11#article",
+      "source": "Business Insider",
+      "publishedAt": "2026-11-08T19:59:23Z",
+      "imageUrl": "https://i.insider.com/6af0a85480d4b24f18347548?width=1200&format=jpeg",
+      "category": "musk",
+      "company": "Other",
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "在主持人嘲笑查理·柯克的“麻木不仁”笑话后，Chewy和其他公司从“I have It”播客中撤下广告",
+      "summaryZh": "主持人詹妮弗·韦尔奇和安吉·沙利文在周六的Instagram帖子中为在他们的播客上嘲笑查理·柯克的笑话道歉。"
+    },
+    {
+      "id": "newsapi-1794266202163-118",
+      "title": "Sequoia partners reportedly blindsided when Roelof Botha joined SpaceX board",
+      "summary": "Sequoia partners reportedly blindsided when Roelof Botha joined SpaceX board | TechCrunchtechcrunch.com",
+      "url": "https://techcrunch.com/2026/11/08/sequoia-partners-reportedly-blindsided-when-roelof-botha-joined-spacex-board/",
+      "source": "TechCrunch",
+      "publishedAt": "2026-11-08T19:51:30Z",
+      "imageUrl": "https://techcrunch.com/wp-content/uploads/2025/10/2243688557.jpg?resize=1200,800",
+      "category": "musk",
+      "company": "SpaceX",
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "据报道，当Roelof Botha加入SpaceX董事会时，红杉资本的合作伙伴措手不及",
+      "summaryZh": "据报道，当Roelof Botha加入SpaceX董事会时，红杉资本的合作伙伴们措手不及"
+    },
+    {
+      "id": "newsapi-1794266202162-84",
+      "title": "When Writers Lose Faith in Free Speech",
+      "summary": "Writers have to maintain an inner distance from external demands, including the demands of politics.",
+      "url": "https://www.theatlantic.com/ideas/2026/11/philip-roth-political-novelists/689337/?utm_source=feed",
+      "source": "The Atlantic",
+      "publishedAt": "2026-11-08T12:00:00Z",
+      "imageUrl": null,
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": false,
+      "titleZh": "当作家对言论自由失去信心时",
+      "summaryZh": "作家必须与外部需求保持内在距离，包括政治需求。"
+    },
+    {
+      "id": "newsapi-1794266202163-93",
+      "title": "AI is speeding up recruitment — and putting agency fees under pressure",
+      "summary": "Recruiters say AI is speeding up screening and reshaping agency work, raising questions about whether percentage-based placement fees can hold.",
+      "url": "https://www.cnbc.com/2026/11/08/ai-recruitment-agency-fees.html",
+      "source": "CNBC",
+      "publishedAt": "2026-11-08T06:00:01Z",
+      "imageUrl": "https://image.cnbcfm.com/api/v1/image/105671436-1547150719833gettyimages-862718244.jpeg?v=1579791016&w=1920&h=1080",
+      "category": "ai",
+      "company": null,
+      "topic": "Other",
+      "topNews": true,
+      "titleZh": "人工智能正在加快招聘速度，并给代理费带来压力",
+      "summaryZh": "招聘人员表示，人工智能正在加速筛选和重塑机构工作，这引发了人们对基于百分比的安置费能否维持的质疑。"
+    }
+  ]
+}
